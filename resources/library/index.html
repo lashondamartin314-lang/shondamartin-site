@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Library | Free Credit Education Guides | Shonda Martin</title>
+  <meta name="description" content="The full library of free credit education resources from Shonda Martin. Banking and subprime reports, dispute strategy, credit building, and the foundations.">
+
+  <meta property="og:title" content="Resource Library | Shonda Martin">
+  <meta property="og:description" content="The full library of free credit education guides. Banking, disputes, building, foundations. All in one place.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shondamartin.com/resources/library/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body class="library-page">
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="../../index.html" class="logo-link" aria-label="Shonda Martin home">
+        <img src="../../assets/logo-on-light.png" alt="Credit Academy" class="site-logo-img" />
+      </a>
+      <div class="nav-stack">
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="../../index.html">Home</a>
+          <a href="../../events.html">Tour</a>
+          <a href="../../blog.html">Blog</a>
+          <a href="../../resources.html" class="active">Resources</a>
+          <a href="../../shop.html">Shop</a>
+        </nav>
+        <nav class="secondary-nav" aria-label="Secondary">
+          <a href="../../index.html#join">Join</a>
+          <span class="nav-divider" aria-hidden="true">·</span>
+          <a href="../../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  <!-- Mobile hamburger button -->
+      <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+  <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">×</button>
+    <div class="mobile-nav-inner">
+      <a href="../../index.html" class="mobile-nav-link">Home</a>
+      <a href="../../events.html" class="mobile-nav-link">Tour</a>
+      <a href="../../blog.html" class="mobile-nav-link">Blog</a>
+      <a href="../../resources.html" class="mobile-nav-link">Resources</a>
+      <a href="../../shop.html" class="mobile-nav-link">Shop</a>
+      <div class="mobile-nav-divider"></div>
+      <a href="../../index.html#join" class="mobile-nav-link mobile-nav-link-secondary">Join the Cousins</a>
+      <a href="../../index.html#contact" class="mobile-nav-link mobile-nav-link-secondary">Find me on socials</a>
+    </div>
+  </nav>
+
+  <script>
+    (function() {
+      const toggle = document.querySelector('.mobile-nav-toggle');
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const overlay = document.getElementById('mobile-nav-overlay');
+      const closeBtn = document.querySelector('.mobile-nav-close');
+      const links = document.querySelectorAll('.mobile-nav-link');
+
+      function openMenu() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        drawer.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) toggle.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (overlay) overlay.addEventListener('click', closeMenu);
+      links.forEach(l => l.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
+  <!-- LIBRARY HERO -->
+  <section class="library-hero">
+    <div class="library-hero-bg" aria-hidden="true"></div>
+    <div class="container library-hero-inner">
+      <a href="../../resources.html" class="library-back">← Back to Resources</a>
+      <div class="library-tag">The Resource Library</div>
+      <h1 class="library-title">
+        The Library.<br>
+        <span class="library-title-accent">All The Free Guides.</span>
+      </h1>
+      <p class="library-sub">
+        Sixteen guides covering banking reports, subprime files, dispute strategy, credit building, and the foundations. Critical guides open right here on the site. Foundation pieces live in the free Cousins community.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTER -->
+  <section class="library-filter-section">
+    <div class="container">
+      <div class="library-filter-row" role="tablist" aria-label="Library categories">
+        <button class="library-filter-pill active" data-category="all">All Guides</button>
+        <button class="library-filter-pill" data-category="banking">Banking &amp; Subprime</button>
+        <button class="library-filter-pill" data-category="repair">Repair Strategy</button>
+        <button class="library-filter-pill" data-category="building">Credit Building</button>
+        <button class="library-filter-pill" data-category="foundations">Foundations</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY GRID -->
+  <section class="library-grid-section">
+    <div class="container">
+
+      <!-- ============ BANKING & SUBPRIME ============ -->
+      <div class="library-category-block" data-category-block="banking">
+        <h2 class="library-section-title"><span class="library-section-emoji">🏦</span> Banking &amp; Subprime Reports</h2>
+        <p class="library-section-intro">The reports nobody talks about. Banking reports decide if you can open a checking account. Subprime files track the lending most Cousins don't realize is being recorded.</p>
+
+        <div class="library-grid">
+
+          <!-- FULL PAGE -->
+          <a href="checking-account-closed-banking-reports.html" class="library-card library-card-full" data-categories="banking">
+            <div class="library-card-image library-grad-banking">
+              <span class="library-card-emoji">🏦</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-banking">Banking</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">If You've Ever Had a Checking Account Closed</h3>
+              <p class="library-card-excerpt">The five banking reports that decide if you can open a new account. ChexSystems, Early Warning, TeleCheck, and the two most people don't know exist.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <!-- FULL PAGE -->
+          <a href="subprime-reports-payday-bnpl.html" class="library-card library-card-full" data-categories="banking">
+            <div class="library-card-image library-grad-banking">
+              <span class="library-card-emoji">📋</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-banking">Banking</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">5 Subprime Reports To Pull (Payday, BNPL, Auto)</h3>
+              <p class="library-card-excerpt">LexisNexis. CoreLogic. CLARITY. Innovis. ARS. The lender files most Cousins don't know are tracking them. How to pull each one for free.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <!-- CARD ONLY (Foundation) -->
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="library-card library-card-foundation" data-categories="banking foundations" target="_blank" rel="noopener">
+            <div class="library-card-image library-grad-foundations">
+              <span class="library-card-emoji">󰡸</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-foundations">Foundations</span>
+                <span class="library-card-badge library-card-badge-foundation">In the Community</span>
+              </div>
+              <h3 class="library-card-title">Understanding the Role of Third-Party Bureaus</h3>
+              <p class="library-card-excerpt">An intro to what third-party bureaus are, how they're different from the big three, and why they matter for your full financial picture.</p>
+              <span class="library-card-cta">Read in the Cousins Community →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ============ REPAIR STRATEGY ============ -->
+      <div class="library-category-block" data-category-block="repair">
+        <h2 class="library-section-title"><span class="library-section-emoji">⚖️</span> Repair Strategy</h2>
+        <p class="library-section-intro">The tactical work. Disputes, collections, deadlines, and the legal protections that back you.</p>
+
+        <div class="library-grid">
+
+          <a href="pay-after-collection-removed.html" class="library-card library-card-full" data-categories="repair">
+            <div class="library-card-image library-grad-repair">
+              <span class="library-card-emoji">💰</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-repair">Repair</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">Should You Pay After A Collection Is Removed?</h3>
+              <p class="library-card-excerpt">The question every Cousin runs into. The legal answer, the strategic answer, and what happens if you do nothing.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <a href="collections-reappear-after-removal.html" class="library-card library-card-full" data-categories="repair">
+            <div class="library-card-image library-grad-repair">
+              <span class="library-card-emoji">🔁</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-repair">Repair</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">What To Do When Collections Reappear After Removal</h3>
+              <p class="library-card-excerpt">Reinsertion is illegal without proper notice. The exact federal rights, the notice requirements, and the dispute path that gets it gone for good.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <a href="frivolous-id-request-bureaus.html" class="library-card library-card-full" data-categories="repair">
+            <div class="library-card-image library-grad-repair">
+              <span class="library-card-emoji">🪪</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-repair">Repair</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">How To Respond To Bureaus' Frivolous ID Requests</h3>
+              <p class="library-card-excerpt">When the bureaus ask for ID for the seventh time, they're stalling. Here's how to break the loop with the law on your side.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <a href="statute-of-limitations.html" class="library-card library-card-full" data-categories="repair">
+            <div class="library-card-image library-grad-repair">
+              <span class="library-card-emoji">⏳</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-repair">Repair</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">Statute of Limitations on Old Debts</h3>
+              <p class="library-card-excerpt">Two clocks running on every old debt. The legal one says when collectors can sue. The credit reporting one says when it falls off your file. They are not the same clock.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <!-- CARD ONLY (Foundation) -->
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="library-card library-card-foundation" data-categories="repair foundations" target="_blank" rel="noopener">
+            <div class="library-card-image library-grad-foundations">
+              <span class="library-card-emoji">📉</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-foundations">Foundations</span>
+                <span class="library-card-badge library-card-badge-foundation">In the Community</span>
+              </div>
+              <h3 class="library-card-title">Understanding Collections and Charge-Offs</h3>
+              <p class="library-card-excerpt">The 101-level breakdown. What a collection actually is, how a charge-off differs, and the lifecycle of each.</p>
+              <span class="library-card-cta">Read in the Cousins Community →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ============ CREDIT BUILDING ============ -->
+      <div class="library-category-block" data-category-block="building">
+        <h2 class="library-section-title"><span class="library-section-emoji">🧱</span> Credit Building</h2>
+        <p class="library-section-intro">The offense, not the defense. Building the profile that opens doors instead of just patching the holes in the one you have.</p>
+
+        <div class="library-grid">
+
+          <a href="the-builders-profile.html" class="library-card library-card-full" data-categories="building">
+            <div class="library-card-image library-grad-building">
+              <span class="library-card-emoji">🧱</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-building">Building</span>
+                <span class="library-card-badge library-card-badge-full">Signature Guide</span>
+              </div>
+              <h3 class="library-card-title">The Builder's Profile™</h3>
+              <p class="library-card-excerpt">My signature credit-building methodology. Four primary accounts, the right mix, the utilization band that wins. The system that actually moves scores.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <a href="30-day-credit-score-plan.html" class="library-card library-card-full" data-categories="building">
+            <div class="library-card-image library-grad-building">
+              <span class="library-card-emoji">🚀</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-building">Building</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">30-Day Credit Score Improvement Plan</h3>
+              <p class="library-card-excerpt">A four-week structured plan. Foundation in week one, disputes in week two, optimization in week three, verification in week four. Action items by day.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+          <a href="how-to-pay-credit-card.html" class="library-card library-card-full" data-categories="building">
+            <div class="library-card-image library-grad-building">
+              <span class="library-card-emoji">💳</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-building">Building</span>
+                <span class="library-card-badge library-card-badge-full">Full Guide</span>
+              </div>
+              <h3 class="library-card-title">How To Pay Your Credit Card (The Right Way)</h3>
+              <p class="library-card-excerpt">Statement date vs due date. The four-step strategy the top 1% use. When to pay, what to pay, and the timing that protects your score and your money.</p>
+              <span class="library-card-cta">Read the guide →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ============ FOUNDATIONS ============ -->
+      <div class="library-category-block" data-category-block="foundations">
+        <h2 class="library-section-title"><span class="library-section-emoji">📚</span> The Foundations</h2>
+        <p class="library-section-intro">The 101-level material. Read these in the free Cousins community where they belong, alongside the live shows where I teach them in depth.</p>
+
+        <div class="library-grid">
+
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="library-card library-card-foundation" data-categories="foundations" target="_blank" rel="noopener">
+            <div class="library-card-image library-grad-foundations">
+              <span class="library-card-emoji">📜</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-foundations">Foundations</span>
+                <span class="library-card-badge library-card-badge-foundation">In the Community</span>
+              </div>
+              <h3 class="library-card-title">Your Rights Under the FCRA</h3>
+              <p class="library-card-excerpt">The Fair Credit Reporting Act gives you specific, enforceable rights. The full breakdown of what you can demand and from whom.</p>
+              <span class="library-card-cta">Read in the Cousins Community →</span>
+            </div>
+          </a>
+
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="library-card library-card-foundation" data-categories="foundations" target="_blank" rel="noopener">
+            <div class="library-card-image library-grad-foundations">
+              <span class="library-card-emoji">📊</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-foundations">Foundations</span>
+                <span class="library-card-badge library-card-badge-foundation">In the Community</span>
+              </div>
+              <h3 class="library-card-title">Understanding Your FICO Score</h3>
+              <p class="library-card-excerpt">The five factors and how each one is weighted. Payment history, utilization, length, mix, new credit. The math behind the number.</p>
+              <span class="library-card-cta">Read in the Cousins Community →</span>
+            </div>
+          </a>
+
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="library-card library-card-foundation" data-categories="foundations" target="_blank" rel="noopener">
+            <div class="library-card-image library-grad-foundations">
+              <span class="library-card-emoji">📈</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-foundations">Foundations</span>
+                <span class="library-card-badge library-card-badge-foundation">In the Community</span>
+              </div>
+              <h3 class="library-card-title">Understanding Your Credit Utilization</h3>
+              <p class="library-card-excerpt">Why utilization is the second-most important factor. The ratios that hurt and the ones that win. How to read your own report for it.</p>
+              <span class="library-card-cta">Read in the Cousins Community →</span>
+            </div>
+          </a>
+
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="library-card library-card-foundation" data-categories="foundations" target="_blank" rel="noopener">
+            <div class="library-card-image library-grad-foundations">
+              <span class="library-card-emoji">🔍</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-foundations">Foundations</span>
+                <span class="library-card-badge library-card-badge-foundation">In the Community</span>
+              </div>
+              <h3 class="library-card-title">How To Identify Discrepancies on Your Credit Report</h3>
+              <p class="library-card-excerpt">The errors most Cousins miss because they don't know what to look for. Field-by-field walkthrough of what to check.</p>
+              <span class="library-card-cta">Read in the Cousins Community →</span>
+            </div>
+          </a>
+
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="library-card library-card-foundation" data-categories="foundations" target="_blank" rel="noopener">
+            <div class="library-card-image library-grad-foundations">
+              <span class="library-card-emoji">📝</span>
+            </div>
+            <div class="library-card-body">
+              <div class="library-card-meta">
+                <span class="library-card-cat library-card-cat-foundations">Foundations</span>
+                <span class="library-card-badge library-card-badge-foundation">In the Community</span>
+              </div>
+              <h3 class="library-card-title">How To Read Your Credit Report</h3>
+              <p class="library-card-excerpt">Your report front to back. Every section, every code, every label. Once you can read it, you can fix it.</p>
+              <span class="library-card-cta">Read in the Cousins Community →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="library-empty-state" id="library-empty-state" style="display:none;">
+        <p>No guides in this category yet.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMUNITY CTA -->
+  <section class="library-cta-section">
+    <div class="container">
+      <div class="library-cta-card">
+        <div class="library-cta-bg" aria-hidden="true"></div>
+        <div class="library-cta-content">
+          <div class="eyebrow eyebrow-light">The Foundations Live Here</div>
+          <h2 class="section-title section-title-light">All of it, in one place.</h2>
+          <p class="lead lead-light">
+            The free Credit Cousins community is where the foundations live, where the live shows happen, and where the family gathers. Pull up a chair.
+          </p>
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" class="btn btn-primary btn-large" target="_blank" rel="noopener">Become a Credit Cousin →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand + tagline column -->
+        <div class="footer-col footer-brand-col">
+          <img src="../../assets/icon-logo.png" alt="Shonda Martin" class="footer-logo" />
+          <p class="footer-tagline">Real credit education. Open door. Pull up a chair.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/RoadTo750Plus" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://www.tiktok.com/@shondamartin_" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg></a>
+            <a href="https://www.youtube.com/channel/UCklV5v1v9UmPX6IhX_ln1EA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg></a>
+            <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener" aria-label="Community"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Learn column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Learn</h4>
+          <ul class="footer-links">
+            <li><a href="../../blog.html">Blog</a></li>
+            <li><a href="../../resources.html">Resources</a></li>
+            <li><a href="../../resources/library/">Resource Library</a></li>
+            <li><a href="../../bootcamp.html">Free Bootcamp</a></li>
+            <li><a href="../../events.html">Tour</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener">Free Community</a></li>
+            <li><a href="https://member.roadto750.net/Registration/CreateAccount/Account" target="_blank" rel="noopener">Credit Academy VIP</a></li>
+            <li><a href="../../shop.html">Shop</a></li>
+            <li><a href="../../index.html#contact">Find me on socials</a></li>
+          </ul>
+        </div>
+
+        <!-- Stay close column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Close</h4>
+          <p class="footer-mini-pitch">A weekly Cousin Sunday note. Real credit wins, what dropped this week, and the next live show.</p>
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener" class="footer-cta">Join the Cousins →</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          <p><strong>Educational content only.</strong> Shonda Martin and Credit Academy provide credit education, teaching, and self-help tools. Nothing on this site constitutes legal, financial, tax, or credit repair advice. We do not perform credit repair services for consumers under the Credit Repair Organizations Act (CROA). Consumers have the right to dispute inaccurate items on their own credit reports for free under the Fair Credit Reporting Act (FCRA).</p>
+        </div>
+        <div class="footer-meta-row">
+          <span class="footer-copyright">&copy; 2026 Credit Academy. All rights reserved.</span>
+          <span class="footer-updated">Last updated May 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const filterPills = document.querySelectorAll('.library-filter-pill');
+      const cards = document.querySelectorAll('.library-card');
+      const blocks = document.querySelectorAll('.library-category-block');
+      const emptyState = document.getElementById('library-empty-state');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          filterPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const category = pill.dataset.category;
+          let visibleCount = 0;
+
+          if (category === 'all') {
+            // Show everything, all blocks visible
+            cards.forEach(c => c.style.display = '');
+            blocks.forEach(b => b.style.display = '');
+            visibleCount = cards.length;
+          } else {
+            // Show only matching cards, hide blocks with no matches
+            cards.forEach(card => {
+              const cardCats = (card.dataset.categories || '').split(/\s+/);
+              if (cardCats.includes(category)) {
+                card.style.display = '';
+                visibleCount++;
+              } else {
+                card.style.display = 'none';
+              }
+            });
+            // Hide entire category blocks that have no visible cards
+            blocks.forEach(block => {
+              const blockCards = block.querySelectorAll('.library-card');
+              const hasVisible = Array.from(blockCards).some(c => c.style.display !== 'none');
+              block.style.display = hasVisible ? '' : 'none';
+            });
+          }
+
+          if (visibleCount === 0 && emptyState) {
+            emptyState.style.display = 'block';
+          } else if (emptyState) {
+            emptyState.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
