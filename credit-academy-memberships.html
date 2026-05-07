@@ -8,6 +8,9 @@
     name="description"
     content="Join Shonda Martin's Credit Academy for credit education, dispute tools, progress tracking, and practical guidance to restore, build, maintain, and leverage credit."
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     @font-face {
       font-family: "Big Noodle Tilting";
@@ -29,15 +32,17 @@
       --blue: #00a5e2;
       --orange: #ff5c00;
       --magenta: #f10085;
-      --ink: #090b22;
+      --ink: #0a0a0a;
+      --muted: #4a4a4a;
+      --soft: #6a6a6a;
       --paper: #ffffff;
-      --mist: #f7f7f9;
+      --mist: #fafafa;
       --cream: #fffaf0;
-      --line: rgba(255, 255, 255, 0.18);
+      --line: #e5e5e5;
       --panel-line: rgba(0, 16, 111, 0.12);
-      --shadow: 0 22px 60px rgba(9, 11, 34, 0.14);
-      --display: "Big Noodle Tilting", "Impact", "Arial Narrow", sans-serif;
-      --body: "Avenir LT Std 45 Book", Avenir, Montserrat, Arial, sans-serif;
+      --shadow: 0 18px 46px rgba(10, 10, 10, 0.1);
+      --display: "Big Noodle Tilting", Oswald, "Arial Narrow", sans-serif;
+      --body: "Avenir LT Std 45 Book", Inter, Avenir, Montserrat, Arial, sans-serif;
     }
 
     * {
@@ -51,7 +56,7 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: #ffffff;
+      background: var(--mist);
       font-family: var(--body);
       line-height: 1.55;
     }
@@ -69,9 +74,10 @@
     .page {
       overflow: hidden;
       background:
-        radial-gradient(circle at 16% 18%, rgba(255, 187, 0, 0.18), transparent 21rem),
-        radial-gradient(circle at 88% 16%, rgba(241, 0, 133, 0.14), transparent 24rem),
-        linear-gradient(180deg, #ffffff 0%, #ffffff 68%, #f6f3fb 100%);
+        radial-gradient(circle at 14% 20%, rgba(255, 187, 0, 0.12), transparent 20rem),
+        radial-gradient(circle at 86% 18%, rgba(241, 0, 133, 0.1), transparent 24rem),
+        radial-gradient(circle at 70% 72%, rgba(0, 165, 226, 0.07), transparent 24rem),
+        linear-gradient(180deg, #fafafa 0%, #ffffff 76%, #faf7ff 100%);
     }
 
     .site-header {
@@ -85,7 +91,7 @@
 
     .nav {
       width: min(1180px, calc(100% - 32px));
-      min-height: 76px;
+      min-height: 74px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -101,7 +107,7 @@
     }
 
     .brand-logo {
-      width: clamp(150px, 22vw, 230px);
+      width: clamp(132px, 18vw, 192px);
       height: auto;
       display: block;
     }
@@ -172,10 +178,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
+      border-radius: 6px;
       padding: 0 14px;
       color: rgba(9, 11, 34, 0.74);
       font-size: 0.93rem;
+      font-weight: 600;
     }
 
     .nav-links a:hover,
@@ -192,44 +199,49 @@
       justify-content: center;
       gap: 10px;
       border: 0;
-      border-radius: 999px;
-      padding: 0 22px;
-      color: #07121f;
-      background: var(--green);
-      box-shadow: 0 14px 36px rgba(94, 200, 6, 0.28);
+      border-radius: 6px;
+      padding: 0 24px;
+      color: #ffffff;
+      background: var(--purple);
+      box-shadow: 0 12px 28px rgba(53, 2, 99, 0.18);
       cursor: pointer;
+      font-family: var(--display);
+      font-size: 0.92rem;
       font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
 
     .button:hover,
     .button:focus-visible {
       transform: translateY(-2px);
-      background: #6fe817;
-      box-shadow: 0 18px 44px rgba(94, 200, 6, 0.36);
+      background: var(--navy);
+      box-shadow: 0 16px 34px rgba(53, 2, 99, 0.24);
       outline: none;
     }
 
     .button.secondary {
-      color: var(--purple);
+      color: var(--ink);
       background: #ffffff;
-      box-shadow: inset 0 0 0 2px rgba(53, 2, 99, 0.18);
+      box-shadow: inset 0 0 0 2px rgba(10, 10, 10, 0.12);
     }
 
     .button.secondary:hover,
     .button.secondary:focus-visible {
-      background: #fff7fb;
-      box-shadow: inset 0 0 0 2px rgba(241, 0, 133, 0.24);
+      color: #ffffff;
+      background: var(--ink);
+      box-shadow: inset 0 0 0 2px var(--ink);
     }
 
     .hero {
       width: min(1180px, calc(100% - 32px));
-      min-height: calc(100svh - 76px);
+      min-height: auto;
       margin: 0 auto;
-      padding: clamp(44px, 7vw, 86px) 0 38px;
+      padding: clamp(42px, 6vw, 82px) 0 clamp(40px, 6vw, 72px);
       display: grid;
       grid-template-columns: minmax(0, 1.02fr) minmax(330px, 0.78fr);
-      gap: clamp(28px, 5vw, 72px);
+      gap: clamp(28px, 4vw, 58px);
       align-items: center;
     }
 
@@ -244,9 +256,12 @@
       padding: 8px 13px;
       color: var(--purple);
       background: #ffffff;
-      box-shadow: 0 14px 36px rgba(9, 11, 34, 0.08);
+      box-shadow: 0 10px 24px rgba(9, 11, 34, 0.06);
       font-size: 0.86rem;
-      font-weight: 900;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .eyebrow i {
@@ -262,7 +277,7 @@
     h3 {
       margin: 0;
       font-family: var(--display);
-      font-weight: 400;
+      font-weight: 700;
       line-height: 0.95;
       letter-spacing: 0;
       text-transform: uppercase;
@@ -270,7 +285,7 @@
 
     h1 {
       max-width: 860px;
-      font-size: clamp(4rem, 11vw, 8.6rem);
+      font-size: clamp(3.35rem, 9.2vw, 7.45rem);
       color: #050505;
     }
 
@@ -283,9 +298,9 @@
 
     .hero-copy {
       max-width: 660px;
-      margin: 24px 0 0;
-      color: rgba(9, 11, 34, 0.74);
-      font-size: clamp(1.03rem, 1.6vw, 1.22rem);
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
     }
 
     .hero-actions {
@@ -307,7 +322,8 @@
       border-top: 4px solid var(--accent);
       padding: 16px;
       background: #ffffff;
-      box-shadow: 0 16px 34px rgba(9, 11, 34, 0.08);
+      border: 1px solid rgba(10, 10, 10, 0.06);
+      box-shadow: 0 12px 28px rgba(9, 11, 34, 0.06);
     }
 
     .proof-tile strong {
@@ -315,12 +331,12 @@
       color: #050505;
       font-family: var(--display);
       font-size: 2.25rem;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1;
     }
 
     .proof-tile span {
-      color: rgba(9, 11, 34, 0.64);
+      color: var(--soft);
       font-size: 0.88rem;
     }
 
@@ -328,10 +344,10 @@
       position: relative;
       border: 1px solid var(--panel-line);
       border-radius: 8px;
-      padding: 22px;
+      padding: 20px;
       color: var(--ink);
       background: #ffffff;
-      box-shadow: 0 22px 60px rgba(9, 11, 34, 0.14);
+      box-shadow: var(--shadow);
     }
 
     .console-top {
@@ -339,7 +355,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .console-top p {
@@ -350,7 +366,7 @@
 
     .lane-finder {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
 
     .lane-option {
@@ -360,7 +376,7 @@
       align-items: start;
       border: 1px solid rgba(0, 16, 111, 0.12);
       border-radius: 8px;
-      padding: 14px;
+      padding: 12px;
       color: var(--ink);
       background: #ffffff;
       cursor: pointer;
@@ -393,23 +409,23 @@
     .lane-option strong {
       display: block;
       font-family: var(--display);
-      font-size: 1.55rem;
-      font-weight: 400;
-      line-height: 0.9;
+      font-size: 1.36rem;
+      font-weight: 700;
+      line-height: 1;
       text-transform: uppercase;
     }
 
     .lane-option span {
       display: block;
       margin-top: 4px;
-      color: rgba(9, 11, 34, 0.62);
+      color: var(--soft);
       font-size: 0.88rem;
     }
 
     .lane-result {
       margin-top: 16px;
       border-left: 5px solid var(--magenta);
-      padding: 16px;
+      padding: 15px;
       background: linear-gradient(100deg, rgba(255, 187, 0, 0.15), rgba(241, 0, 133, 0.08));
     }
 
@@ -422,16 +438,16 @@
 
     .lane-result h3 {
       margin-top: 6px;
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
 
     .lane-result p {
       margin: 8px 0 0;
-      color: rgba(9, 11, 34, 0.68);
+      color: var(--muted);
     }
 
     .section {
-      padding: clamp(64px, 8vw, 108px) 0;
+      padding: clamp(58px, 7vw, 96px) 0;
     }
 
     .section.light {
@@ -444,7 +460,7 @@
       background:
         radial-gradient(circle at 18% 0, rgba(255, 187, 0, 0.12), transparent 18rem),
         radial-gradient(circle at 86% 10%, rgba(241, 0, 133, 0.1), transparent 18rem),
-        linear-gradient(180deg, #ffffff, #faf7ff);
+        linear-gradient(180deg, #ffffff, #fafafa);
       border-top: 1px solid rgba(9, 11, 34, 0.06);
       border-bottom: 1px solid rgba(9, 11, 34, 0.06);
     }
@@ -459,12 +475,12 @@
       align-items: end;
       justify-content: space-between;
       gap: 28px;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
     .section-heading h2 {
       max-width: 720px;
-      font-size: clamp(3rem, 6vw, 5.6rem);
+      font-size: clamp(2.8rem, 5.2vw, 4.9rem);
     }
 
     .section-heading p {
@@ -484,12 +500,15 @@
     .tab {
       min-height: 44px;
       border: 1px solid rgba(0, 16, 111, 0.16);
-      border-radius: 999px;
+      border-radius: 6px;
       padding: 0 16px;
       color: var(--navy);
       background: #ffffff;
       cursor: pointer;
-      font-weight: 800;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .tab[aria-selected="true"] {
@@ -501,7 +520,7 @@
     .membership-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
 
     .community-callout {
@@ -517,7 +536,7 @@
       background:
         linear-gradient(100deg, rgba(255, 187, 0, 0.16), rgba(241, 0, 133, 0.1)),
         #ffffff;
-      box-shadow: 0 16px 34px rgba(9, 11, 34, 0.07);
+      box-shadow: 0 12px 28px rgba(9, 11, 34, 0.06);
     }
 
     .community-callout h3 {
@@ -539,7 +558,7 @@
       border: 1px solid rgba(0, 16, 111, 0.12);
       padding: 24px;
       background: #ffffff;
-      box-shadow: 0 18px 42px rgba(9, 11, 34, 0.08);
+      box-shadow: 0 12px 30px rgba(9, 11, 34, 0.06);
     }
 
     .membership-card:nth-child(1) {
@@ -551,15 +570,14 @@
     }
 
     .membership-card.featured {
-      color: #ffffff;
-      border-color: transparent;
+      color: var(--ink);
+      border-color: rgba(241, 0, 133, 0.2);
+      border-top: 5px solid var(--magenta);
       background:
-        radial-gradient(circle at 22% 0, rgba(255, 187, 0, 0.26), transparent 17rem),
-        radial-gradient(circle at 92% 8%, rgba(241, 0, 133, 0.28), transparent 18rem),
-        linear-gradient(155deg, var(--purple), #1b0639 54%, #08080d),
-        var(--purple);
-      transform: translateY(-8px);
-      box-shadow: 0 30px 70px rgba(0, 16, 111, 0.22);
+        linear-gradient(135deg, rgba(255, 187, 0, 0.18), rgba(241, 0, 133, 0.08)),
+        #ffffff;
+      transform: translateY(-6px);
+      box-shadow: 0 22px 54px rgba(53, 2, 99, 0.15);
     }
 
     .membership-card.featured::before {
@@ -570,10 +588,12 @@
       align-items: center;
       border-radius: 999px;
       padding: 0 12px;
-      color: #07121f;
-      background: var(--green);
+      color: #ffffff;
+      background: var(--purple);
       font-size: 0.78rem;
-      font-weight: 900;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
@@ -598,7 +618,7 @@
     .price strong {
       font-family: var(--display);
       font-size: 3.2rem;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 0.85;
     }
 
@@ -614,10 +634,10 @@
     }
 
     .membership-card p {
-      min-height: 72px;
+      min-height: 0;
       margin: 10px 0 18px;
       color: currentColor;
-      opacity: 0.72;
+      opacity: 0.76;
     }
 
     .membership-card ul {
@@ -633,6 +653,7 @@
       grid-template-columns: 22px 1fr;
       gap: 10px;
       align-items: start;
+      color: rgba(10, 10, 10, 0.78);
     }
 
     .membership-card li::before {
@@ -646,6 +667,10 @@
       box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.28);
     }
 
+    .membership-card.featured li::before {
+      background: linear-gradient(135deg, var(--magenta), var(--yellow));
+    }
+
     .membership-card .button {
       width: 100%;
       margin-top: auto;
@@ -653,24 +678,23 @@
 
     .system-statement {
       margin-top: 32px;
-      border-left: 6px solid var(--green);
+      border-left: 6px solid var(--magenta);
       padding: 22px;
-      color: #ffffff;
+      color: var(--ink);
       background:
-        radial-gradient(circle at 12% 0, rgba(255, 187, 0, 0.22), transparent 16rem),
-        radial-gradient(circle at 92% 0, rgba(241, 0, 133, 0.24), transparent 18rem),
-        linear-gradient(120deg, #08080d, var(--purple) 62%, var(--navy));
-      box-shadow: 0 18px 42px rgba(9, 11, 34, 0.14);
+        linear-gradient(105deg, rgba(255, 187, 0, 0.18), rgba(241, 0, 133, 0.08)),
+        #ffffff;
+      box-shadow: 0 12px 30px rgba(9, 11, 34, 0.06);
     }
 
     .system-statement strong {
-      color: var(--yellow);
+      color: var(--purple);
     }
 
     .system-statement p {
       max-width: 920px;
       margin: 0;
-      color: rgba(255, 255, 255, 0.82);
+      color: var(--muted);
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
     }
 
@@ -684,7 +708,7 @@
     .system-line span {
       border-top: 3px solid var(--accent);
       padding-top: 10px;
-      color: rgba(255, 255, 255, 0.78);
+      color: var(--muted);
     }
 
     .process-grid {
@@ -699,7 +723,7 @@
       border-left: 5px solid var(--accent);
       padding: 22px;
       background: #ffffff;
-      box-shadow: 0 16px 34px rgba(9, 11, 34, 0.07);
+      box-shadow: 0 12px 28px rgba(9, 11, 34, 0.06);
     }
 
     .process-step::before {
@@ -712,12 +736,12 @@
 
     .process-step h3 {
       margin-top: 10px;
-      font-size: 2rem;
+      font-size: 1.85rem;
     }
 
     .process-step p {
       margin: 10px 0 0;
-      color: rgba(9, 11, 34, 0.68);
+      color: var(--muted);
     }
 
     .feature-band {
@@ -740,6 +764,7 @@
       padding: 18px;
       border: 1px solid rgba(0, 16, 111, 0.1);
       background: #ffffff;
+      box-shadow: 0 10px 24px rgba(9, 11, 34, 0.04);
     }
 
     .feature-icon {
@@ -870,6 +895,10 @@
         grid-template-columns: 1fr;
       }
 
+      .academy-console {
+        max-width: 680px;
+      }
+
       .process-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -879,7 +908,7 @@
       }
 
       .membership-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .membership-card h3 {
@@ -892,11 +921,11 @@
 
       .membership-card p,
       .membership-card li {
-        font-size: 0.84rem;
+        font-size: 0.92rem;
       }
 
       .membership-card {
-        padding: 16px;
+        padding: 20px;
       }
 
       .membership-card .button {
@@ -911,6 +940,7 @@
 
       .membership-card.featured {
         transform: none;
+        grid-column: 1 / -1;
       }
 
       .join-actions {
@@ -922,11 +952,25 @@
       .nav {
         min-height: auto;
         padding: 14px 0;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .nav-links a:not(.button) {
         display: none;
+      }
+
+      .nav-links .button.secondary {
+        display: none;
+      }
+
+      .brand-logo {
+        width: 132px;
+      }
+
+      .button {
+        min-height: 44px;
+        padding: 0 16px;
+        font-size: 0.82rem;
       }
 
       .brand-text strong {
@@ -939,11 +983,30 @@
 
       .hero {
         min-height: auto;
+        padding-top: 34px;
+      }
+
+      h1 {
+        font-size: clamp(3.1rem, 16vw, 4.7rem);
+      }
+
+      .hero-actions .button {
+        width: 100%;
       }
 
       .hero-proof,
-      .process-grid {
+      .process-grid,
+      .membership-grid {
         grid-template-columns: 1fr;
+      }
+
+      .membership-card.featured {
+        grid-column: auto;
+      }
+
+      .community-callout .button,
+      .join-actions .button {
+        width: 100%;
       }
 
       .system-statement .system-line {
@@ -966,6 +1029,39 @@
       .feature-icon {
         width: 44px;
         height: 44px;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .nav {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .nav-links .button {
+        padding: 0 12px;
+      }
+
+      .inner,
+      .hero {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .academy-console,
+      .membership-card,
+      .community-callout,
+      .system-statement,
+      .process-step,
+      .feature-item {
+        padding: 16px;
+      }
+
+      .proof-tile strong,
+      .price strong {
+        font-size: 2.2rem;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(2.45rem, 13vw, 3.4rem);
       }
     }
   </style>
@@ -1011,8 +1107,8 @@
               <span>bureau credit focus</span>
             </div>
             <div class="proof-tile" style="--accent: var(--magenta)">
-              <strong>1:1</strong>
-              <span>guided action planning</span>
+              <strong>VIP</strong>
+              <span>guided action support</span>
             </div>
           </div>
         </div>
@@ -1119,17 +1215,18 @@
 
         <article class="membership-card featured" data-card="vip">
           <span class="badge">VIP</span>
-          <h3>Action</h3>
+          <h3>Credit Academy Membership</h3>
           <div class="price"><strong>VIP</strong><span>guided support</span></div>
           <p>
-            Built for members who need guided support to start, continue, or strengthen their
-            credit journey with the Academy, community, and Dispute Engine working together.
+            Learn the strategy while the Academy handles the heavy lifting. You stay in the
+            driver's seat with guided support through the dispute process.
           </p>
           <ul>
-            <li>Patented Dispute Engine for law, letters, follow-up, and tracking</li>
-            <li>Metro 2 compliance, attorney review, and strategic sequencing</li>
-            <li>Exclusive members-only webinars, workshops, and Q+A sessions</li>
-            <li>Guided DIY system refined through 10+ years and 200,000+ reports</li>
+            <li>Dispute Engine scans all three bureau reports, finds negative accounts, and writes letters</li>
+            <li>Letter Library with 17 fillable templates ready to send</li>
+            <li>Private Cousin Community for strategy threads, wins, and member-only conversations</li>
+            <li>Live Q+A with Shonda plus exclusive webinars and workshops</li>
+            <li>SmartCredit 3B monitoring with fresh reports every 40 days and automatic result tracking</li>
           </ul>
           <a class="button" href="https://member.roadto750.net/Registration/CreateAccount/Account">Apply for VIP Action</a>
         </article>
@@ -1151,7 +1248,7 @@
         <p>
           <strong>Instead of juggling random templates,</strong> the Engine integrates everything:
           Metro 2 compliance, attorney review, strategic sequencing, and full tracking of your progress.
-          It is guided DIY, so you stay in control while a proven system supports the heavy lifting.
+          It is guided DIY, so you stay in control while the Academy supports the heavy lifting.
         </p>
         <div class="system-line">
           <span style="--accent: var(--green)">The Engine powers your disputes.</span>
