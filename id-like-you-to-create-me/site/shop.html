@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Learning Tools, Workbooks &amp; Webinars | Shonda Martin</title>
+  <meta name="description" content="A storefront for Shonda Martin's credit education tools: free resources, field guides, workbooks, webinar access, and VIP learning paths.">
+
+  <meta property="og:title" content="Shop the Learning Library | Shonda Martin">
+  <meta property="og:description" content="Free resources, field guides, workbooks, and live learning tools from Shonda Martin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shondamartin.com/shop.html">
+  <meta property="og:image" content="https://shondamartin.com/assets/og-shop.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://shondamartin.com/assets/og-shop.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="shop-page">
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html" class="logo-link" aria-label="Shonda Martin home">
+        <img src="assets/icon-logo.png" alt="Shonda Martin" class="site-logo-img site-logo-icon" />
+      </a>
+      <div class="nav-stack">
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="events.html">Tour</a>
+          <a href="blog.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="shop.html" class="active">Shop</a>
+        </nav>
+        <nav class="secondary-nav" aria-label="Secondary">
+          <a href="index.html#join">Join</a>
+          <span class="nav-divider" aria-hidden="true">·</span>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  <!-- Mobile hamburger button -->
+      <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+  <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">×</button>
+    <div class="mobile-nav-inner">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="events.html" class="mobile-nav-link">Tour</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      <a href="shop.html" class="mobile-nav-link">Shop</a>
+      <div class="mobile-nav-divider"></div>
+      <a href="index.html#join" class="mobile-nav-link mobile-nav-link-secondary">Join the Cousins</a>
+      <a href="index.html#contact" class="mobile-nav-link mobile-nav-link-secondary">Find me on socials</a>
+    </div>
+  </nav>
+
+  <script>
+    (function() {
+      const toggle = document.querySelector('.mobile-nav-toggle');
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const overlay = document.getElementById('mobile-nav-overlay');
+      const closeBtn = document.querySelector('.mobile-nav-close');
+      const links = document.querySelectorAll('.mobile-nav-link');
+
+      function openMenu() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        drawer.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) toggle.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (overlay) overlay.addEventListener('click', closeMenu);
+      links.forEach(l => l.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
+  <section class="shop-hero">
+    <div class="shop-hero-bg" aria-hidden="true"></div>
+    <div class="container shop-hero-inner">
+      <div class="shop-tag">The Learning Library</div>
+      <h1 class="shop-title">
+        Shop the<br>
+        <span class="shop-title-accent">Tools.</span>
+      </h1>
+      <p class="shop-sub">
+        A storefront for the Cousin who wants practical help: free starters, deeper field guides, workbooks, webinars, and VIP support when you're ready for more.
+      </p>
+      <div class="shop-hero-actions">
+        <a href="#free-shop" class="btn btn-primary">Start Free</a>
+        <a href="#paid-shop" class="btn btn-ghost">Browse Paid Tools</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-section">
+    <div class="container">
+
+      <div class="storefront-strip" aria-label="Shop categories">
+        <a href="#free-shop">Free</a>
+        <a href="#paid-shop">Templates &amp; Workbooks</a>
+        <a href="#webinar-shop">Webinars</a>
+        <a href="#support-shop">Community</a>
+      </div>
+
+      <!-- ============ CATEGORY 1: FREE RESOURCES ============ -->
+      <div id="free-shop" class="shop-row-header">
+        <div class="row-eyebrow row-eyebrow-free">Category 01 · Start Free</div>
+        <h2 class="row-title">Free Resources</h2>
+        <p class="row-sub">No paywall, no catch. Foundations for every Cousin walking the road.</p>
+      </div>
+
+      <!-- Bootcamp banner widget (links to /bootcamp) -->
+      <a href="bootcamp.html" class="bootcamp-banner-widget">
+        <div class="banner-widget-bg" aria-hidden="true"></div>
+        <div class="banner-widget-content">
+          <div class="banner-widget-icon">
+            <div class="mini-tv">
+              <div class="mini-tv-screen">
+                <img src="https://i.ytimg.com/vi/egJRFdv7fBM/hqdefault.jpg" alt="" class="mini-tv-thumb" loading="lazy" />
+                <div class="mini-tv-play"></div>
+              </div>
+            </div>
+          </div>
+          <div class="banner-widget-text">
+            <div class="banner-widget-tag">
+              <span class="banner-widget-tag-dot"></span>
+              FREE · 5-Week Video Workshop
+            </div>
+            <h3 class="banner-widget-title">The Credit Bootcamp</h3>
+            <p class="banner-widget-desc">Five weeks of video lessons. Self-paced. Lifetime access. The free workshop the family swears by.</p>
+          </div>
+          <div class="banner-widget-cta">
+            <span class="banner-widget-cta-text">Watch Now</span>
+            <span class="banner-widget-cta-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="shop-grid shop-grid-2col">
+
+        <!-- FREE: Banking Protocol 2026 -->
+        <a href="downloads/banking-protocol-2026.pdf" download class="product-card product-free">
+          <div class="product-image product-image-2">
+            <div class="product-image-text">BANKING<br>PROTOCOL</div>
+          </div>
+          <div class="product-body">
+            <div class="product-tag tag-free">Free · Field Guide</div>
+            <h3 class="product-title">The Banking Protocol 2026</h3>
+            <p class="product-desc">Why one bank says yes and another says no. ChexSystems, Early Warning, TeleCheck, and the protocol for opening accounts that approve.</p>
+            <div class="product-footer">
+              <span class="product-price product-price-free">FREE</span>
+              <span class="product-cta">Download →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- FREE: FICO 10T Decoded -->
+        <a href="downloads/fico-10t-decoded.pdf" download class="product-card product-free">
+          <div class="product-image product-image-3">
+            <div class="product-image-text">FICO 10T<br>DECODED</div>
+          </div>
+          <div class="product-body">
+            <div class="product-tag tag-free">Free · Reference</div>
+            <h3 class="product-title">FICO 10T Decoded</h3>
+            <p class="product-desc">The new scoring model. What it watches, what it rewards, what it punishes. Trended data, UltraFICO, VantageScore 4.0 explained.</p>
+            <div class="product-footer">
+              <span class="product-price product-price-free">FREE</span>
+              <span class="product-cta">Download →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ============ CATEGORY 2: TEMPLATES & WORKBOOKS ============ -->
+      <div id="paid-shop" class="shop-row-header shop-row-header-paid">
+        <div class="row-eyebrow">Category 02 · Self-Paced Study</div>
+        <h2 class="row-title">Templates &amp; Workbooks</h2>
+        <p class="row-sub">Storefront-style learning tools for the Cousin doing the deeper work. Instant access through Stan Store.</p>
+      </div>
+
+      <div class="shop-grid">
+
+        <!-- PAID: Subprime Reports Field Guide -->
+        <a href="https://stan.store/ShondaMartin" target="_blank" rel="noopener" class="product-card">
+          <div class="product-image product-image-4 product-cover">
+            <span class="product-cover-label">Field Guide</span>
+            <div class="product-image-text">SUBPRIME<br>REPORTS</div>
+          </div>
+          <div class="product-body">
+            <div class="product-tag">Field Guide</div>
+            <h3 class="product-title">The Subprime Reports Field Guide</h3>
+            <p class="product-desc">The reports beyond Experian, Equifax, and TransUnion. LexisNexis. CoreLogic. ARS. Innovis. The ones lenders pull that nobody talks about.</p>
+            <div class="product-footer">
+              <span class="product-price">$14.99</span>
+              <span class="product-cta">Get It →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- PAID: The Builder's Profile Reference Guide -->
+        <a href="https://stan.store/ShondaMartin" target="_blank" rel="noopener" class="product-card product-featured">
+          <div class="product-image product-image-5 product-cover">
+            <span class="product-cover-label">Most Popular</span>
+            <div class="product-image-text">THE BUILDER'S<br>PROFILE</div>
+          </div>
+          <div class="product-body">
+            <div class="product-tag tag-bestseller">Most Popular</div>
+            <h3 class="product-title">The Builder's Profile™ Reference Guide</h3>
+            <p class="product-desc">The financial profile that actually performs. Four-account structure, the under-10% framework, and the 90-day build sequence in one reference.</p>
+            <div class="product-footer">
+              <span class="product-price">$19.99</span>
+              <span class="product-cta">Get It →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- PAID: Mortgage Readiness Workbook -->
+        <a href="https://stan.store/ShondaMartin" target="_blank" rel="noopener" class="product-card">
+          <div class="product-image product-image-6 product-cover">
+            <span class="product-cover-label">Workbook</span>
+            <div class="product-image-text">MORTGAGE<br>READY</div>
+          </div>
+          <div class="product-body">
+            <div class="product-tag tag-new">New</div>
+            <h3 class="product-title">The Mortgage Readiness Workbook</h3>
+            <p class="product-desc">Twelve months out from your first home. The checklist, the worksheets, the timeline, the documentation lenders want, all in order.</p>
+            <div class="product-footer">
+              <span class="product-price">$34.99</span>
+              <span class="product-cta">Get It →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ============ CATEGORY 3: WEBINARS & WORKSHOPS ============ -->
+      <div id="webinar-shop" class="shop-row-header shop-row-header-paid">
+        <div class="row-eyebrow row-eyebrow-live">Category 03 · Live Learning</div>
+        <h2 class="row-title">Webinars &amp; Workshops</h2>
+        <p class="row-sub">Learn live, when it matters. From the free workshop to the live webinar series.</p>
+      </div>
+
+      <!-- Bootcamp banner widget (second appearance, in Webinars & Workshops) -->
+      <a href="bootcamp.html" class="bootcamp-banner-widget">
+        <div class="banner-widget-bg" aria-hidden="true"></div>
+        <div class="banner-widget-content">
+          <div class="banner-widget-icon">
+            <div class="mini-tv">
+              <div class="mini-tv-screen">
+                <img src="https://i.ytimg.com/vi/egJRFdv7fBM/hqdefault.jpg" alt="" class="mini-tv-thumb" loading="lazy" />
+                <div class="mini-tv-play"></div>
+              </div>
+            </div>
+          </div>
+          <div class="banner-widget-text">
+            <div class="banner-widget-tag">
+              <span class="banner-widget-tag-dot"></span>
+              FREE · 5-Week Video Workshop
+            </div>
+            <h3 class="banner-widget-title">The Credit Bootcamp</h3>
+            <p class="banner-widget-desc">Start with the free 5-week workshop before stepping into the paid Webinar Series Pass.</p>
+          </div>
+          <div class="banner-widget-cta">
+            <span class="banner-widget-cta-text">Watch Now</span>
+            <span class="banner-widget-cta-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://stan.store/ShondaMartin" target="_blank" rel="noopener" class="product-card product-card-wide">
+        <div class="product-image product-image-wide">
+          <div class="product-image-text">LIVE WEBINAR<br>SERIES</div>
+          <div class="webinar-orbits" aria-hidden="true">
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-tag tag-premium">12-Month Pass</div>
+          <h3 class="product-title">The Live Webinar Series Pass</h3>
+          <p class="product-desc">Four live workshops a year. Quarterly deep-dives on what's actually shifting in credit and money. FICO updates, banking changes, BNPL, scoring rollouts. Plus the full replay library. Submit questions in advance. Learn live, when it matters.</p>
+          <div class="product-footer">
+            <span class="product-price">$49</span>
+            <span class="product-cta">Get The Pass →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- See full storefront CTA -->
+      <div class="shop-full-cta">
+        <h3>See everything in one place</h3>
+        <p>The full Stan Store catalog with bundles, special drops, and announcements. Product checkout stays there; this page is the polished front door.</p>
+        <a href="https://stan.store/ShondaMartin" target="_blank" rel="noopener" class="btn btn-primary btn-large">Visit My Stan Store →</a>
+        <p class="shop-note">All purchases processed securely through Stan Store and Stripe.</p>
+      </div>
+
+      <!-- Other ways to learn -->
+      <div id="support-shop" class="shop-alt-paths">
+        <div class="alt-path-card">
+          <div class="alt-icon" aria-hidden="true">🎓</div>
+          <h3>Looking for the live community?</h3>
+          <p>Free Credit Cousins Community on Circle. Live shows, weekly discussions, and a thousand cousins on the same path.</p>
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener" class="alt-link">Join Free →</a>
+        </div>
+        <div class="alt-path-card">
+          <div class="alt-icon" aria-hidden="true">⚡</div>
+          <h3>Want the full Academy?</h3>
+          <p>Credit Academy VIP membership. The Dispute Engine, the full library, monitoring, and live access. Heavy lifting handled.</p>
+          <a href="https://member.roadto750.net/Registration/CreateAccount/Account" target="_blank" rel="noopener" class="alt-link">Step Into VIP →</a>
+        </div>
+      </div>
+
+      <!-- Compliance disclaimer -->
+      <div class="shop-disclaimer">
+        <p>All products on this page are educational reference materials and self-paced workshops. Nothing sold here is legal, financial, or credit-repair advice or services. Outcomes depend on the reader's own actions and circumstances. Results vary. For legal or financial advice specific to your situation, consult a licensed professional.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand + tagline column -->
+        <div class="footer-col footer-brand-col">
+          <img src="assets/icon-logo.png" alt="Shonda Martin" class="footer-logo" />
+          <p class="footer-tagline">Real credit education. Open door. Pull up a chair.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/RoadTo750Plus" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://www.tiktok.com/@shondamartin_" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg></a>
+            <a href="https://www.youtube.com/channel/UCklV5v1v9UmPX6IhX_ln1EA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg></a>
+            <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener" aria-label="Community"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Learn column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Learn</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="resources/library/">Resource Library</a></li>
+            <li><a href="bootcamp.html">Free Bootcamp</a></li>
+            <li><a href="events.html">Tour</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener">Free Community</a></li>
+            <li><a href="https://member.roadto750.net/Registration/CreateAccount/Account" target="_blank" rel="noopener">Credit Academy VIP</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="index.html#contact">Find me on socials</a></li>
+          </ul>
+        </div>
+
+        <!-- Stay close column -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Close</h4>
+          <p class="footer-mini-pitch">A weekly Cousin Sunday note. Real credit wins, what dropped this week, and the next live show.</p>
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener" class="footer-cta">Join the Cousins →</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          <p><strong>Educational content only.</strong> Shonda Martin and Credit Academy provide credit education, teaching, and self-help tools. Nothing on this site constitutes legal, financial, tax, or credit repair advice. We do not perform credit repair services for consumers under the Credit Repair Organizations Act (CROA). Consumers have the right to dispute inaccurate items on their own credit reports for free under the Fair Credit Reporting Act (FCRA).</p>
+        </div>
+        <div class="footer-meta-row">
+          <span class="footer-copyright">&copy; 2026 Credit Academy. All rights reserved.</span>
+          <span class="footer-updated">Last updated May 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
