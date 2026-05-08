@@ -19,16 +19,54 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Shonda Martin | Credit Educator">
   <meta name="twitter:description" content="Board-certified credit educator. Founder of Credit Academy.">
+  <link rel="canonical" href="https://shondamartin.com/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://shondamartin.com/#shonda",
+      "name": "Shonda Martin",
+      "url": "https://shondamartin.com/",
+      "jobTitle": "Credit Educator",
+      "image": "https://shondamartin.com/assets/shonda-hero.jpg",
+      "brand": {
+        "@id": "https://shondamartin.com/#creditacademy"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://shondamartin.com/#creditacademy",
+      "name": "Credit Academy",
+      "url": "https://shondamartin.com/",
+      "logo": "https://shondamartin.com/assets/icon-logo.png",
+      "founder": {
+        "@id": "https://shondamartin.com/#shonda"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shondamartin.com/#website",
+      "url": "https://shondamartin.com/",
+      "name": "Shonda Martin",
+      "description": "Shonda Martin is a board-certified credit educator and founder of Credit Academy. Free Credit Cousins community and the VIP Credit Academy membership.",
+      "publisher": {
+        "@id": "https://shondamartin.com/#creditacademy"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <a id="top"></a>
-
   <header class="site-header">
     <div class="container header-row">
       <a href="index.html" class="logo-link" aria-label="Shonda Martin home">
@@ -36,7 +74,7 @@
       </a>
       <div class="nav-stack">
         <nav class="primary-nav" aria-label="Primary">
-          <a href="#top" class="active">Home</a>
+          <a href="index.html" class="active">Home</a>
           <a href="events.html">Tour</a>
           <a href="blog.html">Blog</a>
           <a href="resources.html">Resources</a>
@@ -49,7 +87,6 @@
         </nav>
       </div>
 
-      <!-- Mobile hamburger button -->
       <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -123,8 +160,8 @@
           I teach people how to better understand, manage, and improve their financial lives through real credit education, consumer rights awareness, and practical resources.
         </p>
         <div class="hero-cta-row">
-          <a href="#start-here" class="btn btn-primary">Choose Your Next Step</a>
-          <a href="events.html" class="btn btn-ghost">See the Tour</a>
+          <a href="#start-here" class="btn btn-primary">Start Learning</a>
+          <a href="credit-academy-memberships.html" class="btn btn-ghost">Join Credit Academy</a>
         </div>
       </div>
       <div class="hero-photo-col">
@@ -133,25 +170,20 @@
     </div>
   </section>
 
-<section id="about" class="section about-section">
-    <div class="container two-col">
-      <div class="col">
+  <section id="about" class="section about-section">
+    <div class="container about-compact">
+      <div class="about-copy">
         <div class="eyebrow">Introduction</div>
-        <h2 class="section-title">Let me introduce myself.</h2>
+        <h2 class="section-title"><span class="about-title-gradient">Who</span> am I?</h2>
         <p class="lead">
-          I built Credit Academy because credit education in this country is broken. Most of what you find online is hype, half-truths, or an upsell into a $5,000 service that violates federal law. None of that helps the Cousin who just wants to qualify for her first home, repair her score after a hard year, or stop a collector from harassing her at work.
+          I am Shonda Martin, a board-certified credit educator and founder of Credit Academy. I teach people how credit really works, what consumer rights protect them, and how to move from confusion to a clearer plan.
         </p>
         <p>
-          So I teach the law. I teach the process. I teach the templates. I show what the bureaus actually send back and how to read it. I don't promise miracles. I give you the same playbook I've used to walk hundreds of thousands of people from chaos to clarity.
+          This site is your front door: watch the videos, read the guides, pull the templates, join the Cousins, or step into Credit Academy when you want more structure.
         </p>
         <p>
-          Board-certified credit educator. FICO-certified consumer advocate. Licensed financial advisor. Almost a decade building this work, all of it grounded in one belief: education is the leverage. The rest follows.
+          No miracle talk. No fear. Just practical education, plain language, and a path you can actually follow.
         </p>
-      </div>
-      <div class="col col-visual">
-        <div class="about-photo-wrap">
-          <img src="assets/shonda-about.jpg" alt="Shonda Martin, board-certified credit educator and founder of Credit Academy" class="about-photo" />
-        </div>
       </div>
     </div>
   </section>
@@ -168,104 +200,44 @@
 
       <div class="pathway-grid">
         <a href="bootcamp.html" class="pathway-card">
-          <span class="pathway-kicker">New here</span>
-          <h3>Start learning</h3>
-          <p>Begin with the free Credit Bootcamp.</p>
+          <span class="pathway-kicker">Learn</span>
+          <h3>Start with Bootcamp</h3>
+          <p>Get the full credit education foundation first.</p>
           <span class="pathway-link">Watch the Bootcamp →</span>
         </a>
 
-        <a href="resources.html#templates" class="pathway-card">
-          <span class="pathway-kicker">Need a tool</span>
-          <h3>Get a template</h3>
-          <p>Find letters, guides, and downloads.</p>
-          <span class="pathway-link">Open Resource Hub →</span>
+        <a href="#watch" class="pathway-card">
+          <span class="pathway-kicker">Watch</span>
+          <h3>Latest videos</h3>
+          <p>Jump into recent lives, workshops, and teaching clips.</p>
+          <span class="pathway-link">Watch Videos →</span>
         </a>
 
-        <a href="shop.html" class="pathway-card">
-          <span class="pathway-kicker">Ready to shop</span>
-          <h3>Browse resources</h3>
-          <p>Explore guides, workbooks, and trainings.</p>
-          <span class="pathway-link">Shop learning tools →</span>
+        <a href="#reading" class="pathway-card">
+          <span class="pathway-kicker">Read</span>
+          <h3>Articles & guides</h3>
+          <p>Use the written library when you need strategy in plain language.</p>
+          <span class="pathway-link">Start Reading →</span>
         </a>
 
-        <a href="index.html#join" class="pathway-card">
-          <span class="pathway-kicker">Want support</span>
-          <h3>Become a Cousin</h3>
-          <p>Choose community or VIP access.</p>
-          <span class="pathway-link">See support options →</span>
+        <a href="credit-academy-memberships.html" class="pathway-card">
+          <span class="pathway-kicker">Join</span>
+          <h3>Credit Academy</h3>
+          <p>Choose free community, monitoring, or VIP support.</p>
+          <span class="pathway-link">Compare Options →</span>
+        </a>
+
+        <a href="events.html" class="pathway-card">
+          <span class="pathway-kicker">Meet</span>
+          <h3>Tour & Events</h3>
+          <p>Find the next room, brunch, or live learning experience.</p>
+          <span class="pathway-link">See Tour →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section homepage-bootcamp-banner-section">
-    <div class="container">
-      <a href="events.html" class="bootcamp-banner-widget tour-banner-widget">
-        <div class="banner-widget-bg" aria-hidden="true"></div>
-        <div class="banner-widget-content">
-          <div class="banner-widget-icon">
-            <div class="tour-banner-photo">
-              <img src="assets/shonda-brunch-tour.jpg" alt="Shonda Martin at the Credit Bootcamp Brunch Tour" loading="lazy" />
-            </div>
-          </div>
-          <div class="banner-widget-text">
-            <div class="banner-widget-tag">
-              <span class="banner-widget-tag-dot"></span>
-              2026 TOUR · COMMUNITY BRUNCH
-            </div>
-            <h3 class="banner-widget-title">Road to 750 Brunch Tour</h3>
-            <p class="banner-widget-desc">Credit education, community, and real conversation are coming city to city. See the next stop and request your city.</p>
-          </div>
-          <div class="banner-widget-cta">
-            <span class="banner-widget-cta-text">See Tour Stops</span>
-            <span class="banner-widget-cta-arrow">→</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-<section id="shop" class="section shop-preview-section">
-    <div class="container">
-      <div class="eyebrow">The Learning Lab</div>
-      <h2 class="section-title">Browse the <span class="section-title-gradient">Learning Lab.</span></h2>
-      <p class="lead">
-        A cleaner front door to the tools: free starters, downloadable letters and guides, video learning, and deeper support when you want more structure.
-      </p>
-
-      <div class="shop-preview-grid">
-
-        <a href="shop.html" class="shop-preview-card preview-1">
-          <div class="preview-card-icon preview-icon-books" aria-hidden="true"></div>
-          <h3 class="preview-card-title">Free Resources</h3>
-          <p class="preview-card-desc">Bootcamp, PDFs, and quick-start tools with no paywall.</p>
-          <span class="preview-card-cta">Get Free →</span>
-        </a>
-
-        <a href="shop.html" class="shop-preview-card preview-2">
-          <div class="preview-card-icon preview-icon-guides" aria-hidden="true"></div>
-          <h3 class="preview-card-title">Letter Templates &amp; Guides</h3>
-          <p class="preview-card-desc">Downloadable letters, workbooks, and quick guides you can use with more confidence.</p>
-          <span class="preview-card-cta">Browse →</span>
-        </a>
-
-        <a href="shop.html" class="shop-preview-card preview-3">
-          <div class="preview-card-icon preview-icon-video" aria-hidden="true"></div>
-          <h3 class="preview-card-title">Webinars &amp; Workshops</h3>
-          <p class="preview-card-desc">Standalone webinars, long-form lessons, replay access, and full video learning series.</p>
-          <span class="preview-card-cta">Watch &amp; Learn →</span>
-        </a>
-
-      </div>
-
-      <div class="shop-preview-cta">
-        <a href="shop.html" class="btn btn-primary btn-large">See the full library →</a>
-        <p class="shop-preview-note">Or jump straight to <a href="https://stan.store/ShondaMartin" target="_blank" rel="noopener">stan.store/ShondaMartin</a></p>
-      </div>
-    </div>
-  </section>
-
-      <section id="watch" class="section watch-section">
+  <section id="watch" class="section watch-section">
     <div class="container">
 
       <!-- YOUTUBE LATEST VIDEOS -->
@@ -282,41 +254,53 @@
 
           <a href="https://www.youtube.com/live/egJRFdv7fBM" target="_blank" rel="noopener" class="video-card-static">
             <div class="video-thumb">
-              <img src="https://i.ytimg.com/vi/egJRFdv7fBM/hqdefault.jpg" alt="How To Repair Your Credit In 2026 by Shonda Martin" loading="lazy" />
+              <img src="https://i.ytimg.com/vi/egJRFdv7fBM/hqdefault.jpg" alt="Credit education roadmap for 2026 by Shonda Martin" loading="lazy" />
               <div class="video-play-overlay">
                 <div class="video-play-button"></div>
               </div>
               <div class="video-live-badge">▶ Live Show</div>
             </div>
             <div class="video-card-body">
-              <h3 class="video-card-title">How To Repair Your Credit In 2026</h3>
+              <div class="video-topic-row">
+                <span>Roadmap</span>
+                <span>Report Review</span>
+              </div>
+              <h3 class="video-card-title">Your 2026 Credit File Roadmap</h3>
               <p class="video-card-channel">Live · 2 hr workshop</p>
             </div>
           </a>
 
           <a href="https://youtu.be/86ewMb5WX-M" target="_blank" rel="noopener" class="video-card-static">
             <div class="video-thumb">
-              <img src="https://i.ytimg.com/vi/86ewMb5WX-M/hqdefault.jpg" alt="How to Repair Your Credit Yourself in 2026, Part 2 by Shonda Martin" loading="lazy" />
+              <img src="https://i.ytimg.com/vi/86ewMb5WX-M/hqdefault.jpg" alt="Step by step credit education workshop by Shonda Martin" loading="lazy" />
               <div class="video-play-overlay">
                 <div class="video-play-button"></div>
               </div>
             </div>
             <div class="video-card-body">
-              <h3 class="video-card-title">How to Repair Your Credit Yourself in 2026 (Part 2)</h3>
+              <div class="video-topic-row">
+                <span>Workshop</span>
+                <span>DIY Education</span>
+              </div>
+              <h3 class="video-card-title">How To Work Through Your Credit File Yourself</h3>
               <p class="video-card-channel">Step-by-Step Workshop</p>
             </div>
           </a>
 
           <a href="https://www.youtube.com/live/Vk7Jid1QhhY" target="_blank" rel="noopener" class="video-card-static">
             <div class="video-thumb">
-              <img src="https://i.ytimg.com/vi/Vk7Jid1QhhY/hqdefault.jpg" alt="The Credit Repair Trap by Shonda Martin" loading="lazy" />
+              <img src="https://i.ytimg.com/vi/Vk7Jid1QhhY/hqdefault.jpg" alt="Why a good score still gets denied by Shonda Martin" loading="lazy" />
               <div class="video-play-overlay">
                 <div class="video-play-button"></div>
               </div>
               <div class="video-live-badge">▶ Live Show</div>
             </div>
             <div class="video-card-body">
-              <h3 class="video-card-title">The Credit Repair Trap: Why You're Still Getting Denied With a 'Good' Score</h3>
+              <div class="video-topic-row">
+                <span>Approvals</span>
+                <span>Profile Building</span>
+              </div>
+              <h3 class="video-card-title">Why You're Still Getting Denied With a Good Score</h3>
               <p class="video-card-channel">Live · The Build vs. The Cleanup</p>
             </div>
           </a>
@@ -330,6 +314,10 @@
               <div class="video-live-badge">▶ Live Show</div>
             </div>
             <div class="video-card-body">
+              <div class="video-topic-row">
+                <span>Q&amp;A</span>
+                <span>Consumer Rights</span>
+              </div>
               <h3 class="video-card-title">Credit Q+A! Ask Me Anything About Credit</h3>
               <p class="video-card-channel">Live · Cousins-Submitted Q&amp;A</p>
             </div>
@@ -378,9 +366,9 @@
 
         <a href="blog/repair-your-credit-yourself-2026.html" class="article-card article-card-light blog-accent-orange">
           <div class="article-tag">DIY Process</div>
-          <h3 class="article-title">Can You Repair Your Credit Yourself In 2026?</h3>
+          <h3 class="article-title">Can You Work Through Your Credit File Yourself In 2026?</h3>
           <p class="article-excerpt">
-            You don't need a $3,000 service. You don't need to be a lawyer. You need a process. Here's mine, step by step, with the order that actually works.
+            You don't need a $3,000 shortcut. You need a clear process, the right order, and enough education to understand what you're sending.
           </p>
           <div class="article-meta">
             <span class="article-time">10 min read</span>
@@ -402,9 +390,9 @@
 
         <a href="https://www.youtube.com/live/egJRFdv7fBM" target="_blank" rel="noopener" class="article-card article-card-light blog-accent-blue">
           <div class="article-tag">Latest Video</div>
-          <h3 class="article-title">Where Should You Start Repairing Your Credit?</h3>
+          <h3 class="article-title">Where Should You Start With Your Credit File?</h3>
           <p class="article-excerpt">
-            A workshop-style session for the Cousin who wants to understand the process before jumping into letters, disputes, or paid tools.
+            A workshop-style session for the Cousin who wants to understand the process before jumping into letters, monitoring, or paid tools.
           </p>
           <div class="article-meta">
             <span class="article-time">Video</span>
@@ -429,6 +417,73 @@
       <div class="reading-cta">
         <a href="blog.html" class="btn btn-ghost">See More →</a>
       </div>
+    </div>
+  </section>
+
+  <section id="shop" class="section shop-preview-section">
+    <div class="container">
+      <div class="eyebrow">The Learning Lab</div>
+      <h2 class="section-title">Browse the <span class="section-title-gradient">Learning Lab.</span></h2>
+      <p class="lead">
+        A cleaner front door to the tools: free starters, downloadable letters and guides, video learning, and deeper support when you want more structure.
+      </p>
+
+      <div class="shop-preview-grid">
+
+        <a href="shop.html" class="shop-preview-card preview-1">
+          <div class="preview-card-icon preview-icon-books" aria-hidden="true"></div>
+          <h3 class="preview-card-title">Free Resources</h3>
+          <p class="preview-card-desc">Bootcamp, PDFs, and quick-start tools with no paywall.</p>
+          <span class="preview-card-cta">Get Free →</span>
+        </a>
+
+        <a href="shop.html" class="shop-preview-card preview-2">
+          <div class="preview-card-icon preview-icon-guides" aria-hidden="true"></div>
+          <h3 class="preview-card-title">Letter Templates &amp; Guides</h3>
+          <p class="preview-card-desc">Downloadable letters, workbooks, and quick guides you can use with more confidence.</p>
+          <span class="preview-card-cta">Browse →</span>
+        </a>
+
+        <a href="shop.html" class="shop-preview-card preview-3">
+          <div class="preview-card-icon preview-icon-video" aria-hidden="true"></div>
+          <h3 class="preview-card-title">Webinars &amp; Workshops</h3>
+          <p class="preview-card-desc">Standalone webinars, long-form lessons, replay access, and full video learning series.</p>
+          <span class="preview-card-cta">Watch &amp; Learn →</span>
+        </a>
+
+      </div>
+
+      <div class="shop-preview-cta">
+        <a href="shop.html" class="btn btn-primary btn-large">See the full library →</a>
+        <p class="shop-preview-note">Or jump straight to <a href="https://stan.store/ShondaMartin" target="_blank" rel="noopener">stan.store/ShondaMartin</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section homepage-bootcamp-banner-section">
+    <div class="container">
+      <a href="events.html" class="bootcamp-banner-widget tour-banner-widget">
+        <div class="banner-widget-bg" aria-hidden="true"></div>
+        <div class="banner-widget-content">
+          <div class="banner-widget-icon">
+            <div class="tour-banner-photo">
+              <img src="assets/shonda-brunch-tour.jpg" alt="Shonda Martin at the Credit Bootcamp Brunch Tour" loading="lazy" />
+            </div>
+          </div>
+          <div class="banner-widget-text">
+            <div class="banner-widget-tag">
+              <span class="banner-widget-tag-dot"></span>
+              2026 TOUR · COMMUNITY BRUNCH
+            </div>
+            <h3 class="banner-widget-title">Road to 750 Brunch Tour</h3>
+            <p class="banner-widget-desc">Credit education, community, and real conversation are coming city to city. See the next stop and request your city.</p>
+          </div>
+          <div class="banner-widget-cta">
+            <span class="banner-widget-cta-text">See Tour Stops</span>
+            <span class="banner-widget-cta-arrow">→</span>
+          </div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -463,10 +518,10 @@
           <div class="path-tag tag-vip">VIP · The Full System</div>
           <h3 class="path-title">Credit Academy<br>Membership</h3>
           <p class="path-sub">
-            <strong>You learn the strategy. The Academy handles the heavy lifting. You stay in the driver's seat.</strong> The full membership built for ease and clarity through every step of the dispute process.
+            <strong>You learn the strategy. The Academy handles the heavy lifting. You stay in the driver's seat.</strong> The full membership built for ease and clarity through the report review and letter process.
           </p>
           <ul class="path-features path-features-vip">
-            <li><strong>The Dispute Engine.</strong> Scans all three bureau reports, finds every negative account, and writes the dispute letters for you.</li>
+            <li><strong>The Dispute Engine.</strong> Scans all three bureau reports, identifies negative accounts, and prepares the letters for you.</li>
             <li><strong>The Letter Library.</strong> All 17 dispute templates, fillable and ready to send.</li>
             <li><strong>Private Cousin Community.</strong> Strategy threads, wins, and the conversations not posted in public.</li>
             <li><strong>Live Q&amp;A with Shonda.</strong> Recurring real-time access. The educator who built it, in the room with you.</li>
@@ -547,6 +602,12 @@
     </div>
   </section>
 
+  <nav class="mobile-sticky-cta" aria-label="Quick actions">
+    <a href="shop.html">Shop</a>
+    <a href="credit-academy-memberships.html">Join</a>
+    <a href="resources.html">Learn</a>
+  </nav>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -597,7 +658,7 @@
 
       <div class="footer-bottom">
         <div class="footer-disclaimer">
-          <p><strong>Educational content only.</strong> Shonda Martin and Credit Academy provide credit education, teaching, and self-help tools. Nothing on this site constitutes legal, financial, tax, or credit repair advice. We do not perform credit repair services for consumers under the Credit Repair Organizations Act (CROA). Consumers have the right to dispute inaccurate items on their own credit reports for free under the Fair Credit Reporting Act (FCRA).</p>
+          <p><strong>Educational content only.</strong> Shonda Martin and Credit Academy provide credit education, teaching, and self-help tools. Nothing on this site is legal, financial, or tax advice, and no specific outcome is guaranteed. Consumers can review their own reports, contact consumer reporting agencies and furnishers, and use federal consumer rights for free.</p>
         </div>
         <div class="footer-meta-row">
           <span class="footer-copyright">&copy; 2026 Credit Academy. All rights reserved.</span>
