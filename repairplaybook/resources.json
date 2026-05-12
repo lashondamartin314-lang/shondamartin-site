@@ -1,5 +1,5 @@
 {
-"$schema_note": "Edit this file to change the sidebar buttons. Each button needs: label, url, icon. Icons available: report, shield, tools, download, book, link. Save the file, GitHub will rebuild the site in about 30 seconds.",
+"$schema_note": "Edit this file to change the sidebar buttons. Valid icons: report, shield, tools, download, book, link.",
 "buttons": [
 {
 "label": "Pull Your Credit Reports",
@@ -20,12 +20,11 @@
 "label": "Download Printable PDF",
 "url": "./the-repair-playbook.pdf",
 "icon": "download"
-}
-  {
+},
+{
 "label": "Join Credit Academy!",
 "url": "https://member.roadto750.net/Registration/CreateAccount/Account",
-"icon": "Join"
+"icon": "book"
 }
 ]
 }
-
