@@ -1,5 +1,5 @@
 {
-"$schema_note": "Edit this file to change the sidebar buttons. Valid icons: report, shield, tools, download, book, link.",
+"$schema_note": "Edit this file to change the sidebar buttons. Valid icons: report, shield, tools, download, book, link. CRITICAL: every button block ends with }, EXCEPT the last one which ends with just }",
 "buttons": [
 {
 "label": "Join Credit Academy!",
@@ -25,6 +25,6 @@
 "label": "Identity Theft Resources",
 "url": "https://www.identitytheft.gov",
 "icon": "shield"
-},
+}
 ]
 }
