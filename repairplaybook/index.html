@@ -56,7 +56,7 @@
   .menu-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   .backdrop { display: none; position: fixed; inset: 0; background: rgba(10, 14, 46, 0.4); z-index: 15; opacity: 0; transition: opacity 0.25s ease; }
   .kit-frame { position: fixed; top: 0; left: var(--sidebar-width); right: 0; bottom: 0; background: var(--paper); }
-  .kit-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.kit-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
   @media (max-width: 768px) {
     .menu-toggle { display: flex; }
     .sidebar { transform: translateX(-100%); box-shadow: 4px 0 20px rgba(0, 0, 0, 0.12); width: min(86vw, 320px); }
