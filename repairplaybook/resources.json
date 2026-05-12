@@ -1,0 +1,30 @@
+{
+"$schema_note": "Edit this file to change the sidebar buttons. Valid icons: report, shield, tools, download, book, link. CRITICAL: every button block ends with }, EXCEPT the last one which ends with just }",
+"buttons": [
+{
+"label": "Join Credit Academy!",
+"url": "https://member.roadto750.net/Registration/CreateAccount/Account",
+"icon": "book"
+},
+{
+"label": "Download Official Report",
+"url": "https://www.annualcreditreport.com",
+"icon": "report"
+},
+{
+"label": "Get SmartCredit Report (easier)",
+"url": "https://www.smartcredit.com/?PID=74780",
+"icon": "tools"
+},
+{
+"label": "Download This Playbook",
+"url": "./the-repair-playbook.pdf",
+"icon": "download"
+},
+{
+"label": "Identity Theft Resources",
+"url": "https://www.identitytheft.gov",
+"icon": "shield"
+}
+]
+}

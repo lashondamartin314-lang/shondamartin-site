@@ -1,19 +1,25 @@
 [build]
-  publish = "."
+publish = "."
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
 
 [[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/downloads/*"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
+for = "/downloads/*"
+[headers.values]
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/repairplaybook/*"
+[headers.values]
+X-Frame-Options = "SAMEORIGIN"
+Cache-Control = "public, max-age=86400"

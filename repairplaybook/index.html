@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Repair Playbook · Credit Academy · Shonda Martin</title>
+<meta name="description" content="The Repair Playbook by Shonda Martin. Six phases. Five rounds. Built on FCRA and FDCPA law. Credit Academy.">
+<link rel="canonical" href="https://shondamartin.com/repairplaybook/">
+<meta property="og:title" content="The Repair Playbook · Credit Academy · Shonda Martin">
+<meta property="og:description" content="Six phases. Five rounds. Built on FCRA and FDCPA law.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shondamartin.com/repairplaybook/">
+<style>
+  :root {
+    --magenta: #F10085;
+    --magenta-muted: #B30060;
+    --magenta-tint: #FFE0EF;
+    --yellow: #FFBB00;
+    --navy: #00106F;
+    --navy-deep: #0A0E2E;
+    --cream: #F8F4EC;
+    --cream-deep: #F0EADA;
+    --paper: #FFFFFF;
+    --ink: #000000;
+    --stone: #5C5C66;
+    --stone-medium: #7A7A85;
+    --hairline: #E5E5E5;
+    --hairline-soft: #F0F0F0;
+    --sidebar-width: 248px;
+    --font-display: 'Bebas Neue', 'Impact', 'Helvetica Neue Condensed', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: var(--cream); font-family: var(--font-body); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .sidebar { position: fixed; top: 0; left: 0; width: var(--sidebar-width); height: 100vh; background: var(--cream); border-right: 1px solid var(--hairline); padding: 28px 18px 24px; display: flex; flex-direction: column; overflow-y: auto; z-index: 20; transition: transform 0.28s cubic-bezier(.2,.7,.2,1); }
+  .sidebar-header { padding: 0 6px 22px; border-bottom: 1px solid var(--hairline-soft); margin-bottom: 18px; }
+  .sidebar-eyebrow { font-family: var(--font-mono); font-size: 9.5px; font-weight: 700; color: var(--magenta-muted); text-transform: uppercase; letter-spacing: .14em; margin-bottom: 8px; }
+  .sidebar-title { font-family: var(--font-display); font-size: 28px; font-weight: 400; line-height: 1.0; letter-spacing: 0.01em; color: var(--ink); text-transform: uppercase; }
+  .sidebar-subtitle { font-size: 11px; color: var(--stone); margin-top: 6px; letter-spacing: 0.02em; }
+  .sidebar-section-label { font-family: var(--font-mono); font-size: 9px; font-weight: 700; color: var(--stone-medium); text-transform: uppercase; letter-spacing: .16em; padding: 0 6px 10px; }
+  .sidebar-nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .sidebar-btn { display: flex; align-items: center; gap: 12px; padding: 11px 12px; background: var(--paper); border: 1px solid var(--hairline); border-radius: 6px; color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 500; line-height: 1.25; transition: all 0.15s ease; }
+  .sidebar-btn:hover { background: var(--magenta-tint); border-color: var(--magenta); color: var(--magenta-muted); transform: translateX(2px); }
+  .sidebar-btn:focus-visible { outline: 2px solid var(--magenta); outline-offset: 2px; }
+  .sidebar-btn-icon { flex-shrink: 0; width: 18px; height: 18px; color: var(--magenta); display: flex; align-items: center; justify-content: center; }
+  .sidebar-btn-icon svg { width: 18px; height: 18px; }
+  .sidebar-btn-label { flex: 1; }
+  .sidebar-btn-arrow { flex-shrink: 0; opacity: 0.4; transition: opacity 0.15s, transform 0.15s; }
+  .sidebar-btn:hover .sidebar-btn-arrow { opacity: 1; transform: translateX(2px); }
+  .sidebar-footer { margin-top: 22px; padding: 16px 6px 0; border-top: 1px solid var(--hairline-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .sidebar-footer a { color: var(--stone); text-decoration: none; }
+  .sidebar-footer a:hover { color: var(--magenta); }
+  .menu-toggle { display: none; position: fixed; top: 14px; left: 14px; z-index: 30; width: 44px; height: 44px; border-radius: 50%; background: var(--magenta); color: var(--paper); border: 0; cursor: pointer; box-shadow: 0 4px 14px rgba(241, 0, 133, 0.25); align-items: center; justify-content: center; }
+  .menu-toggle svg { width: 22px; height: 22px; }
+  .menu-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .backdrop { display: none; position: fixed; inset: 0; background: rgba(10, 14, 46, 0.4); z-index: 15; opacity: 0; transition: opacity 0.25s ease; }
+  .kit-frame { position: fixed; top: 0; left: var(--sidebar-width); right: 0; bottom: 0; background: var(--paper); }
+.kit-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  @media (max-width: 1099px) {
+    .menu-toggle { display: flex; }
+    .sidebar { transform: translateX(-100%); box-shadow: 4px 0 20px rgba(0, 0, 0, 0.12); width: min(86vw, 320px); }
+    body.sidebar-open .sidebar { transform: translateX(0); }
+    body.sidebar-open .backdrop { display: block; opacity: 1; }
+    .kit-frame { left: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<button class="menu-toggle" id="menu-toggle" aria-label="Open resources" aria-controls="sidebar" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+</button>
+<aside class="sidebar" id="sidebar" aria-label="Repair Playbook resources">
+  <div class="sidebar-header">
+    <div class="sidebar-eyebrow">Credit Academy</div>
+    <div class="sidebar-title">Repair<br>Playbook</div>
+    <div class="sidebar-subtitle">Tools &amp; resources</div>
+  </div>
+  <div class="sidebar-section-label">Resources</div>
+  <nav class="sidebar-nav" id="sidebar-nav" aria-label="External resources">
+    <noscript>
+      <a class="sidebar-btn" href="https://www.annualcreditreport.com" target="_blank" rel="noopener"><span class="sidebar-btn-label">Pull Your Credit Reports</span></a>
+      <a class="sidebar-btn" href="https://www.identitytheft.gov" target="_blank" rel="noopener"><span class="sidebar-btn-label">Identity Theft Recovery</span></a>
+      <a class="sidebar-btn" href="https://www.smartcredit.com" target="_blank" rel="noopener"><span class="sidebar-btn-label">SmartCredit Tools</span></a>
+      <a class="sidebar-btn" href="./the-repair-playbook.pdf" target="_blank" rel="noopener"><span class="sidebar-btn-label">Download Printable PDF</span></a>
+    </noscript>
+  </nav>
+  <div class="sidebar-footer"><a href="/">shondamartin.com</a></div>
+</aside>
+<div class="backdrop" id="backdrop" aria-hidden="true"></div>
+<main class="kit-frame" role="main">
+  <iframe src="./kit.html" title="The Repair Playbook — full document" loading="eager"></iframe>
+</main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="icon-report" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></symbol>
+  <symbol id="icon-tools" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-7 7a1 1 0 0 0 1.4 1.4l7-7a4 4 0 0 0 5.4-5.4l-2.4 2.4-2-2 2.4-2.4z"></path><path d="M16 14l5 5"></path></symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></symbol>
+  <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></symbol>
+  <symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"></path><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"></path></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></symbol>
+</defs></svg>
+<script>
+(function(){'use strict';
+const ICONS=['report','shield','tools','download','book','link'];
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function isSafeUrl(u){if(typeof u!=='string')return false;const t=u.trim();return /^(https?:|mailto:|tel:|\.?\/|[a-z0-9_-]+\.[a-z]{2,})/i.test(t)&&!/^javascript:/i.test(t)&&!/^data:/i.test(t);}
+function renderButtons(buttons){const nav=document.getElementById('sidebar-nav');if(!nav)return;nav.innerHTML=buttons.map(b=>{if(!b||!b.label||!isSafeUrl(b.url))return '';const icon=ICONS.includes(b.icon)?b.icon:'link';return `<a class="sidebar-btn" href="${escapeHtml(b.url)}" target="_blank" rel="noopener"><span class="sidebar-btn-icon"><svg><use href="#icon-${icon}"></use></svg></span><span class="sidebar-btn-label">${escapeHtml(b.label)}</span><span class="sidebar-btn-arrow"><svg width="14" height="14"><use href="#icon-arrow"></use></svg></span></a>`;}).join('');}
+function loadResources(){fetch('./resources.json',{cache:'no-cache'}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{if(d&&Array.isArray(d.buttons))renderButtons(d.buttons);}).catch(()=>{});}
+function setupMobileToggle(){const toggle=document.getElementById('menu-toggle');const backdrop=document.getElementById('backdrop');if(!toggle||!backdrop)return;const close=()=>{document.body.classList.remove('sidebar-open');toggle.setAttribute('aria-expanded','false');};const open=()=>{document.body.classList.add('sidebar-open');toggle.setAttribute('aria-expanded','true');};toggle.addEventListener('click',()=>{document.body.classList.contains('sidebar-open')?close():open();});backdrop.addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});document.getElementById('sidebar').addEventListener('click',e=>{if(e.target.closest('a.sidebar-btn')&&window.matchMedia('(max-width: 1099px)').matches)close();});}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>{loadResources();setupMobileToggle();});}else{loadResources();setupMobileToggle();}
+})();
+</script>
+</body>
+</html>
