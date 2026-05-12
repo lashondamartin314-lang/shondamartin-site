@@ -57,7 +57,7 @@
   .backdrop { display: none; position: fixed; inset: 0; background: rgba(10, 14, 46, 0.4); z-index: 15; opacity: 0; transition: opacity 0.25s ease; }
   .kit-frame { position: fixed; top: 0; left: var(--sidebar-width); right: 0; bottom: 0; background: var(--paper); }
 .kit-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
-  @media (max-width: 768px) {
+  @media (max-width: 1099px) {
     .menu-toggle { display: flex; }
     .sidebar { transform: translateX(-100%); box-shadow: 4px 0 20px rgba(0, 0, 0, 0.12); width: min(86vw, 320px); }
     body.sidebar-open .sidebar { transform: translateX(0); }
@@ -108,7 +108,7 @@ function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':
 function isSafeUrl(u){if(typeof u!=='string')return false;const t=u.trim();return /^(https?:|mailto:|tel:|\.?\/|[a-z0-9_-]+\.[a-z]{2,})/i.test(t)&&!/^javascript:/i.test(t)&&!/^data:/i.test(t);}
 function renderButtons(buttons){const nav=document.getElementById('sidebar-nav');if(!nav)return;nav.innerHTML=buttons.map(b=>{if(!b||!b.label||!isSafeUrl(b.url))return '';const icon=ICONS.includes(b.icon)?b.icon:'link';return `<a class="sidebar-btn" href="${escapeHtml(b.url)}" target="_blank" rel="noopener"><span class="sidebar-btn-icon"><svg><use href="#icon-${icon}"></use></svg></span><span class="sidebar-btn-label">${escapeHtml(b.label)}</span><span class="sidebar-btn-arrow"><svg width="14" height="14"><use href="#icon-arrow"></use></svg></span></a>`;}).join('');}
 function loadResources(){fetch('./resources.json',{cache:'no-cache'}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{if(d&&Array.isArray(d.buttons))renderButtons(d.buttons);}).catch(()=>{});}
-function setupMobileToggle(){const toggle=document.getElementById('menu-toggle');const backdrop=document.getElementById('backdrop');if(!toggle||!backdrop)return;const close=()=>{document.body.classList.remove('sidebar-open');toggle.setAttribute('aria-expanded','false');};const open=()=>{document.body.classList.add('sidebar-open');toggle.setAttribute('aria-expanded','true');};toggle.addEventListener('click',()=>{document.body.classList.contains('sidebar-open')?close():open();});backdrop.addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});document.getElementById('sidebar').addEventListener('click',e=>{if(e.target.closest('a.sidebar-btn')&&window.matchMedia('(max-width: 768px)').matches)close();});}
+function setupMobileToggle(){const toggle=document.getElementById('menu-toggle');const backdrop=document.getElementById('backdrop');if(!toggle||!backdrop)return;const close=()=>{document.body.classList.remove('sidebar-open');toggle.setAttribute('aria-expanded','false');};const open=()=>{document.body.classList.add('sidebar-open');toggle.setAttribute('aria-expanded','true');};toggle.addEventListener('click',()=>{document.body.classList.contains('sidebar-open')?close():open();});backdrop.addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});document.getElementById('sidebar').addEventListener('click',e=>{if(e.target.closest('a.sidebar-btn')&&window.matchMedia('(max-width: 1099px)').matches)close();});}
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>{loadResources();setupMobileToggle();});}else{loadResources();setupMobileToggle();}
 })();
 </script>
