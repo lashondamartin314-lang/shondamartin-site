@@ -13,13 +13,18 @@
 },
 {
 "label": "SmartCredit Tools",
-"url": "https://www.smartcredit.com",
+"url": "https://www.smartcredit.com/?PID=74780",
 "icon": "tools"
 },
 {
 "label": "Download Printable PDF",
 "url": "./the-repair-playbook.pdf",
 "icon": "download"
+}
+  {
+"label": "Join Credit Academy!",
+"url": "https://member.roadto750.net/Registration/CreateAccount/Account",
+"icon": "Join"
 }
 ]
 }
