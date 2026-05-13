@@ -21,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <link rel="icon" type="image/png" href="assets/icon-logo.png">
+  <link rel="apple-touch-icon" href="assets/icon-logo.png">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
 {
@@ -43,6 +45,7 @@
   </script>
 </head>
 <body class="blog-page">
+<a class="skip-to-content" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="container header-row">
       <a href="index.html" class="logo-link" aria-label="Shonda Martin home">
@@ -119,6 +122,8 @@
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
     })();
   </script>
+
+  <main id="main-content">
 
   <!-- BLOG HERO -->
   <section class="blog-hero-section">
@@ -247,7 +252,9 @@
           <div class="blog-featured-meta">
             <span class="blog-featured-cat">Credit Education</span>
             <span class="blog-featured-dot">·</span>
-            <span class="blog-featured-date">Latest</span>
+            <span class="blog-featured-author">By Shonda Martin</span>
+            <span class="blog-featured-dot">·</span>
+            <time class="blog-featured-date" datetime="2026-05-06">May 6, 2026</time>
             <span class="blog-featured-dot">·</span>
             <span class="blog-featured-time">8 min read</span>
           </div>
@@ -275,6 +282,11 @@
               <span class="blog-post-cat blog-post-cat-credit">Credit Education</span>
               <span class="blog-post-time">10 min read</span>
             </div>
+            <div class="blog-post-byline">
+              <span class="blog-post-author">By Shonda Martin</span>
+              <span class="blog-post-dot" aria-hidden="true">·</span>
+              <time datetime="2026-05-06">May 6, 2026</time>
+            </div>
             <h3 class="blog-post-title">How To Work Through Your Credit File Yourself In 2026</h3>
             <p class="blog-post-excerpt">You don't need a shortcut. You need a process, a clean order of operations, and enough education to understand each step.</p>
             <span class="blog-post-arrow">Read →</span>
@@ -289,6 +301,11 @@
             <div class="blog-post-meta">
               <span class="blog-post-cat blog-post-cat-credit">Credit Education</span>
               <span class="blog-post-time">9 min read</span>
+            </div>
+            <div class="blog-post-byline">
+              <span class="blog-post-author">By Shonda Martin</span>
+              <span class="blog-post-dot" aria-hidden="true">·</span>
+              <time datetime="2026-05-06">May 6, 2026</time>
             </div>
             <h3 class="blog-post-title">The Credit Profile That Actually Works (4 Accounts, Under 10%, Done Right)</h3>
             <p class="blog-post-excerpt">Four open primary accounts. Two credit cards. One short-term installment. One long-term. Utilization between 1 and 10 percent. Here's why this works.</p>
@@ -384,6 +401,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <nav class="mobile-sticky-cta" aria-label="Quick actions">
     <a href="shop.html">Shop</a>

@@ -11483,3 +11483,59 @@ body:not(.blog-page):not(.learn-page):not(.events-page):not(.shop-page):not(.art
   .mobile-sticky-cta a:nth-child(2) { background: linear-gradient(135deg, #350263, #F10085); color: #fff; }
   body { padding-bottom: 78px; }
 }
+
+/* ==========================================================================
+   Quick wins — May 2026
+   Skip-to-content (a11y), blog byline metadata
+   ========================================================================== */
+
+/* Skip-to-content — hidden until keyboard focus */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: #00106F;
+  color: #fff;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.18s ease;
+}
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid #FFBB00;
+  outline-offset: 0;
+}
+
+/* Blog post byline (author + date) */
+.blog-post-byline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #6a6a6a;
+  margin: 4px 0 10px;
+  flex-wrap: wrap;
+}
+.blog-post-byline time {
+  font-variant-numeric: tabular-nums;
+}
+.blog-post-author {
+  font-weight: 600;
+  color: #555;
+}
+.blog-post-dot {
+  color: #b0b0b0;
+}
+
+/* Featured-card author */
+.blog-featured-author {
+  font-weight: 600;
+  color: #4a4a4a;
+}
