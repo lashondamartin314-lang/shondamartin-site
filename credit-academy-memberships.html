@@ -8,6 +8,10 @@
     name="description"
     content="Join Shonda Martin's Credit Academy for credit education, dispute tools, progress tracking, and practical guidance to restore, build, maintain, and leverage credit."
   />
+  <link rel="canonical" href="https://shondamartin.com/credit-academy-memberships.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     @font-face {
       font-family: "Big Noodle Tilting";
@@ -29,15 +33,17 @@
       --blue: #00a5e2;
       --orange: #ff5c00;
       --magenta: #f10085;
-      --ink: #090b22;
+      --ink: #0a0a0a;
+      --muted: #4a4a4a;
+      --soft: #6a6a6a;
       --paper: #ffffff;
-      --mist: #f7f7f9;
+      --mist: #fafafa;
       --cream: #fffaf0;
-      --line: rgba(255, 255, 255, 0.18);
+      --line: #e5e5e5;
       --panel-line: rgba(0, 16, 111, 0.12);
-      --shadow: 0 22px 60px rgba(9, 11, 34, 0.14);
-      --display: "Big Noodle Tilting", "Impact", "Arial Narrow", sans-serif;
-      --body: "Avenir LT Std 45 Book", Avenir, Montserrat, Arial, sans-serif;
+      --shadow: 0 18px 46px rgba(10, 10, 10, 0.1);
+      --display: "Big Noodle Tilting", Oswald, "Arial Narrow", sans-serif;
+      --body: "Avenir LT Std 45 Book", Inter, Avenir, Montserrat, Arial, sans-serif;
     }
 
     * {
@@ -51,7 +57,7 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: #ffffff;
+      background: var(--mist);
       font-family: var(--body);
       line-height: 1.55;
     }
@@ -69,23 +75,121 @@
     .page {
       overflow: hidden;
       background:
-        radial-gradient(circle at 16% 18%, rgba(255, 187, 0, 0.18), transparent 21rem),
-        radial-gradient(circle at 88% 16%, rgba(241, 0, 133, 0.14), transparent 24rem),
-        linear-gradient(180deg, #ffffff 0%, #ffffff 68%, #f6f3fb 100%);
+        radial-gradient(circle at 14% 20%, rgba(255, 187, 0, 0.12), transparent 20rem),
+        radial-gradient(circle at 86% 18%, rgba(241, 0, 133, 0.1), transparent 24rem),
+        radial-gradient(circle at 70% 72%, rgba(0, 165, 226, 0.07), transparent 24rem),
+        linear-gradient(180deg, #fafafa 0%, #ffffff 76%, #faf7ff 100%);
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(9, 11, 34, 0.08);
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(18px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+      background: rgba(250, 250, 250, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .header-row {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--ink);
+      flex: 0 0 auto;
+    }
+
+    .site-logo-img {
+      display: block;
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+    }
+
+    .nav-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .primary-nav,
+    .secondary-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .primary-nav {
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+    }
+
+    .secondary-nav {
+      gap: 10px;
+      color: var(--soft);
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+    }
+
+    .primary-nav a,
+    .secondary-nav a {
+      position: relative;
+      color: inherit;
+    }
+
+    .primary-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--purple);
+      transition: width 180ms ease;
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a:focus-visible,
+    .secondary-nav a:hover,
+    .secondary-nav a:focus-visible {
+      color: var(--purple);
+      outline: none;
+    }
+
+    .primary-nav a:hover::after,
+    .primary-nav a:focus-visible::after,
+    .primary-nav a.active::after {
+      width: 100%;
+    }
+
+    .nav-divider {
+      color: var(--yellow);
+    }
+
+    .mobile-nav-toggle,
+    .mobile-nav-close {
+      display: none;
     }
 
     .nav {
       width: min(1180px, calc(100% - 32px));
-      min-height: 76px;
+      min-height: 74px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -101,7 +205,7 @@
     }
 
     .brand-logo {
-      width: clamp(150px, 22vw, 230px);
+      width: clamp(132px, 18vw, 192px);
       height: auto;
       display: block;
     }
@@ -172,10 +276,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
+      border-radius: 6px;
       padding: 0 14px;
       color: rgba(9, 11, 34, 0.74);
       font-size: 0.93rem;
+      font-weight: 600;
     }
 
     .nav-links a:hover,
@@ -192,44 +297,49 @@
       justify-content: center;
       gap: 10px;
       border: 0;
-      border-radius: 999px;
-      padding: 0 22px;
-      color: #07121f;
-      background: var(--green);
-      box-shadow: 0 14px 36px rgba(94, 200, 6, 0.28);
+      border-radius: 6px;
+      padding: 0 24px;
+      color: #ffffff;
+      background: var(--purple);
+      box-shadow: 0 12px 28px rgba(53, 2, 99, 0.18);
       cursor: pointer;
+      font-family: var(--display);
+      font-size: 0.92rem;
       font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
 
     .button:hover,
     .button:focus-visible {
       transform: translateY(-2px);
-      background: #6fe817;
-      box-shadow: 0 18px 44px rgba(94, 200, 6, 0.36);
+      background: var(--navy);
+      box-shadow: 0 16px 34px rgba(53, 2, 99, 0.24);
       outline: none;
     }
 
     .button.secondary {
-      color: var(--purple);
+      color: var(--ink);
       background: #ffffff;
-      box-shadow: inset 0 0 0 2px rgba(53, 2, 99, 0.18);
+      box-shadow: inset 0 0 0 2px rgba(10, 10, 10, 0.12);
     }
 
     .button.secondary:hover,
     .button.secondary:focus-visible {
-      background: #fff7fb;
-      box-shadow: inset 0 0 0 2px rgba(241, 0, 133, 0.24);
+      color: #ffffff;
+      background: var(--ink);
+      box-shadow: inset 0 0 0 2px var(--ink);
     }
 
     .hero {
       width: min(1180px, calc(100% - 32px));
-      min-height: calc(100svh - 76px);
+      min-height: auto;
       margin: 0 auto;
-      padding: clamp(44px, 7vw, 86px) 0 38px;
+      padding: clamp(42px, 6vw, 82px) 0 clamp(40px, 6vw, 72px);
       display: grid;
       grid-template-columns: minmax(0, 1.02fr) minmax(330px, 0.78fr);
-      gap: clamp(28px, 5vw, 72px);
+      gap: clamp(28px, 4vw, 58px);
       align-items: center;
     }
 
@@ -244,9 +354,12 @@
       padding: 8px 13px;
       color: var(--purple);
       background: #ffffff;
-      box-shadow: 0 14px 36px rgba(9, 11, 34, 0.08);
+      box-shadow: 0 10px 24px rgba(9, 11, 34, 0.06);
       font-size: 0.86rem;
-      font-weight: 900;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .eyebrow i {
@@ -262,7 +375,7 @@
     h3 {
       margin: 0;
       font-family: var(--display);
-      font-weight: 400;
+      font-weight: 700;
       line-height: 0.95;
       letter-spacing: 0;
       text-transform: uppercase;
@@ -270,7 +383,7 @@
 
     h1 {
       max-width: 860px;
-      font-size: clamp(4rem, 11vw, 8.6rem);
+      font-size: clamp(3.35rem, 9.2vw, 7.45rem);
       color: #050505;
     }
 
@@ -283,9 +396,9 @@
 
     .hero-copy {
       max-width: 660px;
-      margin: 24px 0 0;
-      color: rgba(9, 11, 34, 0.74);
-      font-size: clamp(1.03rem, 1.6vw, 1.22rem);
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
     }
 
     .hero-actions {
@@ -307,7 +420,8 @@
       border-top: 4px solid var(--accent);
       padding: 16px;
       background: #ffffff;
-      box-shadow: 0 16px 34px rgba(9, 11, 34, 0.08);
+      border: 1px solid rgba(10, 10, 10, 0.06);
+      box-shadow: 0 12px 28px rgba(9, 11, 34, 0.06);
     }
 
     .proof-tile strong {
@@ -315,12 +429,12 @@
       color: #050505;
       font-family: var(--display);
       font-size: 2.25rem;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1;
     }
 
     .proof-tile span {
-      color: rgba(9, 11, 34, 0.64);
+      color: var(--soft);
       font-size: 0.88rem;
     }
 
@@ -328,10 +442,102 @@
       position: relative;
       border: 1px solid var(--panel-line);
       border-radius: 8px;
-      padding: 22px;
+      padding: 28px;
       color: var(--ink);
       background: #ffffff;
-      box-shadow: 0 22px 60px rgba(9, 11, 34, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .academy-console::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border-top: 5px solid var(--yellow);
+      pointer-events: none;
+    }
+
+    .membership-visual {
+      overflow: hidden;
+      padding: 0;
+      background: #050505;
+      border-color: rgba(10, 10, 10, 0.08);
+    }
+
+    .membership-visual::before {
+      border-top-color: var(--magenta);
+      z-index: 2;
+    }
+
+    .portrait-stage {
+      position: relative;
+      min-height: 355px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 16%, rgba(255, 187, 0, 0.42), transparent 12rem),
+        radial-gradient(circle at 82% 18%, rgba(241, 0, 133, 0.3), transparent 13rem),
+        linear-gradient(145deg, #350263 0%, #12001f 54%, #050505 100%);
+    }
+
+    .portrait-stage::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 46%;
+      background: linear-gradient(180deg, transparent, rgba(5, 5, 5, 0.72));
+      pointer-events: none;
+    }
+
+    .portrait-stage img {
+      position: relative;
+      z-index: 1;
+      width: min(92%, 430px);
+      max-height: 390px;
+      object-fit: contain;
+      object-position: bottom center;
+    }
+
+    .portrait-label {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      z-index: 3;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      color: #ffffff;
+    }
+
+    .portrait-label strong {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .portrait-label span {
+      display: block;
+      max-width: 210px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.86rem;
+    }
+
+    .academy-mark {
+      width: 124px;
+      padding: 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .visual-copy {
+      padding: 22px;
+      background: #ffffff;
     }
 
     .console-top {
@@ -342,6 +548,15 @@
       margin-bottom: 24px;
     }
 
+    .console-top strong {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 4vw, 3.35rem);
+      font-weight: 700;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
     .console-top p {
       margin: 0;
       color: rgba(9, 11, 34, 0.64);
@@ -350,7 +565,7 @@
 
     .lane-finder {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
 
     .lane-option {
@@ -360,7 +575,7 @@
       align-items: start;
       border: 1px solid rgba(0, 16, 111, 0.12);
       border-radius: 8px;
-      padding: 14px;
+      padding: 12px;
       color: var(--ink);
       background: #ffffff;
       cursor: pointer;
@@ -393,23 +608,23 @@
     .lane-option strong {
       display: block;
       font-family: var(--display);
-      font-size: 1.55rem;
-      font-weight: 400;
-      line-height: 0.9;
+      font-size: 1.36rem;
+      font-weight: 700;
+      line-height: 1;
       text-transform: uppercase;
     }
 
     .lane-option span {
       display: block;
       margin-top: 4px;
-      color: rgba(9, 11, 34, 0.62);
+      color: var(--soft);
       font-size: 0.88rem;
     }
 
     .lane-result {
       margin-top: 16px;
       border-left: 5px solid var(--magenta);
-      padding: 16px;
+      padding: 15px;
       background: linear-gradient(100deg, rgba(255, 187, 0, 0.15), rgba(241, 0, 133, 0.08));
     }
 
@@ -422,16 +637,69 @@
 
     .lane-result h3 {
       margin-top: 6px;
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
 
     .lane-result p {
       margin: 8px 0 0;
-      color: rgba(9, 11, 34, 0.68);
+      color: var(--muted);
+    }
+
+    .path-preview {
+      display: grid;
+      gap: 12px;
+    }
+
+    .preview-row {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      border: 1px solid rgba(10, 10, 10, 0.08);
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px;
+      background: #ffffff;
+    }
+
+    .preview-row strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.45rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .preview-row span {
+      color: var(--soft);
+      font-size: 0.9rem;
+    }
+
+    .preview-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--accent);
+      font-family: var(--display);
+      font-weight: 700;
+    }
+
+    .preview-tag {
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: var(--purple);
+      background: rgba(53, 2, 99, 0.08);
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .section {
-      padding: clamp(64px, 8vw, 108px) 0;
+      padding: clamp(58px, 7vw, 96px) 0;
     }
 
     .section.light {
@@ -444,7 +712,7 @@
       background:
         radial-gradient(circle at 18% 0, rgba(255, 187, 0, 0.12), transparent 18rem),
         radial-gradient(circle at 86% 10%, rgba(241, 0, 133, 0.1), transparent 18rem),
-        linear-gradient(180deg, #ffffff, #faf7ff);
+        linear-gradient(180deg, #ffffff, #fafafa);
       border-top: 1px solid rgba(9, 11, 34, 0.06);
       border-bottom: 1px solid rgba(9, 11, 34, 0.06);
     }
@@ -459,12 +727,12 @@
       align-items: end;
       justify-content: space-between;
       gap: 28px;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
     .section-heading h2 {
       max-width: 720px;
-      font-size: clamp(3rem, 6vw, 5.6rem);
+      font-size: clamp(2.8rem, 5.2vw, 4.9rem);
     }
 
     .section-heading p {
@@ -484,12 +752,15 @@
     .tab {
       min-height: 44px;
       border: 1px solid rgba(0, 16, 111, 0.16);
-      border-radius: 999px;
+      border-radius: 6px;
       padding: 0 16px;
       color: var(--navy);
       background: #ffffff;
       cursor: pointer;
-      font-weight: 800;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .tab[aria-selected="true"] {
@@ -501,7 +772,11 @@
     .membership-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 18px;
+    }
+
+    .membership-grid.simple {
+      align-items: stretch;
     }
 
     .community-callout {
@@ -517,7 +792,7 @@
       background:
         linear-gradient(100deg, rgba(255, 187, 0, 0.16), rgba(241, 0, 133, 0.1)),
         #ffffff;
-      box-shadow: 0 16px 34px rgba(9, 11, 34, 0.07);
+      box-shadow: 0 12px 28px rgba(9, 11, 34, 0.06);
     }
 
     .community-callout h3 {
@@ -539,7 +814,31 @@
       border: 1px solid rgba(0, 16, 111, 0.12);
       padding: 24px;
       background: #ffffff;
-      box-shadow: 0 18px 42px rgba(9, 11, 34, 0.08);
+      box-shadow: 0 12px 30px rgba(9, 11, 34, 0.06);
+    }
+
+    .membership-card.free-tier {
+      background: #050505;
+      color: #ffffff;
+      border-color: #050505;
+      border-top: 5px solid var(--green);
+    }
+
+    .membership-card.free-tier p,
+    .membership-card.free-tier li {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .membership-card.free-tier .badge {
+      color: #07121f;
+      background: var(--green);
+    }
+
+    .membership-card.monitor-tier {
+      border-top: 5px solid var(--blue);
+      background:
+        linear-gradient(135deg, rgba(0, 165, 226, 0.1), rgba(255, 187, 0, 0.08)),
+        #ffffff;
     }
 
     .membership-card:nth-child(1) {
@@ -551,15 +850,14 @@
     }
 
     .membership-card.featured {
-      color: #ffffff;
-      border-color: transparent;
+      color: var(--ink);
+      border-color: rgba(241, 0, 133, 0.2);
+      border-top: 5px solid var(--magenta);
       background:
-        radial-gradient(circle at 22% 0, rgba(255, 187, 0, 0.26), transparent 17rem),
-        radial-gradient(circle at 92% 8%, rgba(241, 0, 133, 0.28), transparent 18rem),
-        linear-gradient(155deg, var(--purple), #1b0639 54%, #08080d),
-        var(--purple);
-      transform: translateY(-8px);
-      box-shadow: 0 30px 70px rgba(0, 16, 111, 0.22);
+        linear-gradient(135deg, rgba(255, 187, 0, 0.18), rgba(241, 0, 133, 0.08)),
+        #ffffff;
+      transform: translateY(-6px);
+      box-shadow: 0 22px 54px rgba(53, 2, 99, 0.15);
     }
 
     .membership-card.featured::before {
@@ -570,10 +868,12 @@
       align-items: center;
       border-radius: 999px;
       padding: 0 12px;
-      color: #07121f;
-      background: var(--green);
+      color: #ffffff;
+      background: var(--purple);
       font-size: 0.78rem;
-      font-weight: 900;
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
@@ -598,7 +898,7 @@
     .price strong {
       font-family: var(--display);
       font-size: 3.2rem;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 0.85;
     }
 
@@ -614,10 +914,10 @@
     }
 
     .membership-card p {
-      min-height: 72px;
+      min-height: 0;
       margin: 10px 0 18px;
       color: currentColor;
-      opacity: 0.72;
+      opacity: 0.76;
     }
 
     .membership-card ul {
@@ -633,6 +933,11 @@
       grid-template-columns: 22px 1fr;
       gap: 10px;
       align-items: start;
+      color: rgba(10, 10, 10, 0.78);
+    }
+
+    .membership-card.free-tier li {
+      color: rgba(255, 255, 255, 0.78);
     }
 
     .membership-card li::before {
@@ -646,31 +951,90 @@
       box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.28);
     }
 
+    .membership-card.featured li::before {
+      background: linear-gradient(135deg, var(--magenta), var(--yellow));
+    }
+
     .membership-card .button {
       width: 100%;
       margin-top: auto;
     }
 
+    .membership-card.free-tier .button {
+      color: #07121f;
+      background: var(--green);
+      box-shadow: 0 12px 28px rgba(94, 200, 6, 0.24);
+    }
+
+    .membership-card.free-tier .button:hover,
+    .membership-card.free-tier .button:focus-visible {
+      color: #07121f;
+      background: #72e51f;
+    }
+
+    .smartcredit-banner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 26px;
+      align-items: center;
+      margin-top: 22px;
+      border: 1px solid rgba(0, 165, 226, 0.22);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      padding: clamp(22px, 4vw, 34px);
+      background:
+        radial-gradient(circle at 12% 0, rgba(0, 165, 226, 0.14), transparent 18rem),
+        radial-gradient(circle at 86% 20%, rgba(255, 187, 0, 0.16), transparent 16rem),
+        #ffffff;
+      box-shadow: 0 14px 34px rgba(9, 11, 34, 0.06);
+    }
+
+    .smartcredit-banner h3 {
+      margin-top: 8px;
+      font-size: clamp(2.4rem, 4vw, 3.9rem);
+    }
+
+    .smartcredit-banner p {
+      max-width: 760px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .smartcredit-points {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .smartcredit-points span {
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--navy);
+      background: rgba(0, 165, 226, 0.1);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
     .system-statement {
       margin-top: 32px;
-      border-left: 6px solid var(--green);
+      border-left: 6px solid var(--magenta);
       padding: 22px;
-      color: #ffffff;
+      color: var(--ink);
       background:
-        radial-gradient(circle at 12% 0, rgba(255, 187, 0, 0.22), transparent 16rem),
-        radial-gradient(circle at 92% 0, rgba(241, 0, 133, 0.24), transparent 18rem),
-        linear-gradient(120deg, #08080d, var(--purple) 62%, var(--navy));
-      box-shadow: 0 18px 42px rgba(9, 11, 34, 0.14);
+        linear-gradient(105deg, rgba(255, 187, 0, 0.18), rgba(241, 0, 133, 0.08)),
+        #ffffff;
+      box-shadow: 0 12px 30px rgba(9, 11, 34, 0.06);
     }
 
     .system-statement strong {
-      color: var(--yellow);
+      color: var(--purple);
     }
 
     .system-statement p {
       max-width: 920px;
       margin: 0;
-      color: rgba(255, 255, 255, 0.82);
+      color: var(--muted);
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
     }
 
@@ -684,12 +1048,12 @@
     .system-line span {
       border-top: 3px solid var(--accent);
       padding-top: 10px;
-      color: rgba(255, 255, 255, 0.78);
+      color: var(--muted);
     }
 
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
       counter-reset: steps;
     }
@@ -699,7 +1063,7 @@
       border-left: 5px solid var(--accent);
       padding: 22px;
       background: #ffffff;
-      box-shadow: 0 16px 34px rgba(9, 11, 34, 0.07);
+      box-shadow: 0 12px 28px rgba(9, 11, 34, 0.06);
     }
 
     .process-step::before {
@@ -712,12 +1076,12 @@
 
     .process-step h3 {
       margin-top: 10px;
-      font-size: 2rem;
+      font-size: 1.85rem;
     }
 
     .process-step p {
       margin: 10px 0 0;
-      color: rgba(9, 11, 34, 0.68);
+      color: var(--muted);
     }
 
     .feature-band {
@@ -740,6 +1104,7 @@
       padding: 18px;
       border: 1px solid rgba(0, 16, 111, 0.1);
       background: #ffffff;
+      box-shadow: 0 10px 24px rgba(9, 11, 34, 0.04);
     }
 
     .feature-icon {
@@ -845,22 +1210,191 @@
       color: rgba(9, 11, 34, 0.68);
     }
 
-    .footer {
-      padding: 30px 0;
-      color: rgba(255, 255, 255, 0.72);
-      background: #050826;
+    .mobile-nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 180;
+      background: rgba(5, 5, 5, 0.48);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
     }
 
-    .footer .inner {
+    .mobile-nav-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 190;
+      width: min(86vw, 360px);
+      height: 100svh;
+      padding: 28px;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(241, 0, 133, 0.26), transparent 12rem),
+        linear-gradient(145deg, var(--purple), #08080d);
+      transform: translateX(100%);
+      transition: transform 220ms ease;
+      box-shadow: -18px 0 44px rgba(0, 0, 0, 0.28);
+    }
+
+    .mobile-nav-drawer.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 1.8rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .mobile-nav-inner {
+      display: grid;
+      gap: 4px;
+      padding-top: 48px;
+    }
+
+    .mobile-nav-link {
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 16px 0;
+      font-family: var(--display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav-link-secondary {
+      color: var(--yellow);
+    }
+
+    .mobile-nav-divider {
+      height: 1px;
+      margin: 12px 0;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .site-footer {
+      padding: 64px 0 28px;
+      color: rgba(255, 255, 255, 0.76);
+      background: #050505;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.2fr) repeat(3, minmax(0, 1fr));
+      gap: 34px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-logo {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline,
+    .footer-mini-pitch,
+    .footer-disclaimer p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .footer-social a {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #050505;
+      background: var(--yellow);
+      font-family: var(--display);
+      font-weight: 700;
+    }
+
+    .footer-col-title {
+      margin: 0 0 14px;
+      color: #ffffff;
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-links a,
+    .footer-cta {
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 700;
+    }
+
+    .footer-links a:hover,
+    .footer-cta:hover {
+      color: var(--yellow);
+    }
+
+    .footer-cta {
+      display: inline-flex;
+      margin-top: 16px;
+      color: var(--yellow);
+      font-family: var(--display);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-bottom {
+      display: grid;
+      gap: 18px;
+      padding-top: 24px;
+    }
+
+    .footer-disclaimer p {
+      max-width: 980px;
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    .footer-disclaimer strong {
+      color: #ffffff;
+    }
+
+    .footer-meta-row {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
-    }
-
-    .footer a {
-      color: #ffffff;
-      font-weight: 800;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 0.82rem;
     }
 
     @media (max-width: 980px) {
@@ -868,6 +1402,14 @@
       .feature-band,
       .join-panel {
         grid-template-columns: 1fr;
+      }
+
+      .academy-console {
+        max-width: 680px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .process-grid {
@@ -878,8 +1420,12 @@
         grid-template-columns: 1fr;
       }
 
+      .smartcredit-banner {
+        grid-template-columns: 1fr;
+      }
+
       .membership-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .membership-card h3 {
@@ -892,11 +1438,11 @@
 
       .membership-card p,
       .membership-card li {
-        font-size: 0.84rem;
+        font-size: 0.92rem;
       }
 
       .membership-card {
-        padding: 16px;
+        padding: 20px;
       }
 
       .membership-card .button {
@@ -919,14 +1465,64 @@
     }
 
     @media (max-width: 720px) {
+      .container {
+        width: min(100% - 32px, 1200px);
+      }
+
+      .header-row {
+        min-height: 68px;
+      }
+
+      .nav-stack {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(10, 10, 10, 0.12);
+        border-radius: 8px;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      .hamburger-line {
+        width: 18px;
+        height: 2px;
+        display: block;
+        margin: 2px 0;
+        background: var(--ink);
+      }
+
+      .mobile-nav-close {
+        display: grid;
+        place-items: center;
+      }
+
       .nav {
         min-height: auto;
         padding: 14px 0;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .nav-links a:not(.button) {
         display: none;
+      }
+
+      .nav-links .button.secondary {
+        display: none;
+      }
+
+      .brand-logo {
+        width: 132px;
+      }
+
+      .button {
+        min-height: 44px;
+        padding: 0 16px;
+        font-size: 0.82rem;
       }
 
       .brand-text strong {
@@ -939,11 +1535,31 @@
 
       .hero {
         min-height: auto;
+        padding-top: 34px;
+      }
+
+      h1 {
+        font-size: clamp(3.1rem, 16vw, 4.7rem);
+      }
+
+      .hero-actions .button {
+        width: 100%;
       }
 
       .hero-proof,
-      .process-grid {
+      .process-grid,
+      .membership-grid {
         grid-template-columns: 1fr;
+      }
+
+      .membership-card.featured {
+        grid-column: auto;
+      }
+
+      .community-callout .button,
+      .smartcredit-banner .button,
+      .join-actions .button {
+        width: 100%;
       }
 
       .system-statement .system-line {
@@ -967,39 +1583,159 @@
         width: 44px;
         height: 44px;
       }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .nav {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .nav-links .button {
+        padding: 0 12px;
+      }
+
+      .inner,
+      .hero {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .academy-console,
+      .membership-card,
+      .community-callout,
+      .smartcredit-banner,
+      .system-statement,
+      .process-step,
+      .feature-item {
+        padding: 16px;
+      }
+
+      .preview-row {
+        grid-template-columns: 36px 1fr;
+      }
+
+      .preview-number {
+        width: 36px;
+        height: 36px;
+      }
+
+      .preview-tag {
+        grid-column: 2;
+        width: fit-content;
+      }
+
+      .proof-tile strong,
+      .price strong {
+        font-size: 2.2rem;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(2.45rem, 13vw, 3.4rem);
+      }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Credit Academy Memberships",
+  "url": "https://shondamartin.com/credit-academy-memberships.html",
+  "description": "Join Shonda Martin's Credit Academy for credit education, dispute tools, progress tracking, and practical guidance to restore, build, maintain, and leverage credit.",
+  "image": "https://shondamartin.com/assets/credit-academy-logo-black-web.png",
+  "mainEntity": {
+    "@type": "OfferCatalog",
+    "name": "Credit Academy Membership Options",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Free Cousin Seat",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7"
+      },
+      {
+        "@type": "Offer",
+        "name": "Credit File Visibility",
+        "price": "9",
+        "priceCurrency": "USD",
+        "url": "https://www.smartcredit.com/?PID=74780"
+      },
+      {
+        "@type": "Offer",
+        "name": "Credit Academy Membership VIP",
+        "url": "https://member.roadto750.net/Registration/CreateAccount/Account"
+      }
+    ]
+  }
+}
+  </script>
 </head>
 <body>
+  <a id="top"></a>
   <div class="page">
     <header class="site-header">
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="https://shondamartin.com" aria-label="Shonda Martin Credit Academy home">
-          <img class="brand-logo" src="assets/credit-academy-logo-black.png" alt="Credit Academy by Shonda Martin" />
+      <div class="container header-row">
+        <a href="index.html" class="logo-link" aria-label="Shonda Martin home">
+          <img src="assets/icon-logo.png" alt="Shonda Martin" class="site-logo-img site-logo-icon" />
         </a>
-        <div class="nav-links">
-          <a href="#memberships">Memberships</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#faq">FAQ</a>
-          <a class="button secondary" href="https://member.roadto750.net/Registration/LoginAccount/Login?ReturnUrl=%2F">Log In</a>
-          <a class="button" href="#join">Join Now</a>
+        <div class="nav-stack">
+          <nav class="primary-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="events.html">Tour</a>
+            <a href="blog.html">Blog</a>
+            <a href="resources.html">Resources</a>
+            <a href="shop.html">Shop</a>
+          </nav>
+          <nav class="secondary-nav" aria-label="Secondary">
+            <a href="#memberships" class="active">Memberships</a>
+            <span class="nav-divider" aria-hidden="true">·</span>
+            <a href="index.html#contact">Contact</a>
+            <span class="nav-divider" aria-hidden="true">·</span>
+            <a href="https://member.roadto750.net/Registration/LoginAccount/Login?ReturnUrl=%2F">Member Login</a>
+          </nav>
         </div>
-      </nav>
+
+        <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
     </header>
+
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+    <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile navigation" aria-hidden="true">
+      <button class="mobile-nav-close" aria-label="Close navigation menu">×</button>
+      <div class="mobile-nav-inner">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="events.html" class="mobile-nav-link">Tour</a>
+        <a href="blog.html" class="mobile-nav-link">Blog</a>
+        <a href="resources.html" class="mobile-nav-link">Resources</a>
+        <a href="shop.html" class="mobile-nav-link">Shop</a>
+        <div class="mobile-nav-divider"></div>
+        <a href="#memberships" class="mobile-nav-link mobile-nav-link-secondary">Memberships</a>
+        <a href="#join" class="mobile-nav-link mobile-nav-link-secondary">Join Credit Academy</a>
+        <a href="index.html#contact" class="mobile-nav-link mobile-nav-link-secondary">Find me on socials</a>
+      </div>
+    </nav>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div>
           <p class="eyebrow"><i aria-hidden="true"></i> Restore. Build. Maintain. Leverage.</p>
-          <h1 id="hero-title">The Credit Academy built for your <span class="accent">next level.</span></h1>
+          <h1 id="hero-title">Choose your Credit Academy <span class="accent">seat.</span></h1>
           <p class="hero-copy">
-            A dedicated membership experience for credit monitoring, learning, guided disputes,
-            community support, and action planning so you can stop piecing together random advice
-            and move through a purpose-built system.
+            Start free, add 3-bureau monitoring when you need visibility, or step into VIP when
+            you want the full guided Credit Academy system behind your next move.
           </p>
           <div class="hero-actions">
             <a class="button" href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7">Join Free Community</a>
-            <a class="button secondary" href="#memberships">Explore Memberships</a>
+            <a class="button secondary" href="#memberships">Compare Options</a>
           </div>
           <div class="hero-proof" aria-label="Credit Academy highlights">
             <div class="proof-tile" style="--accent: var(--green)">
@@ -1011,42 +1747,57 @@
               <span>bureau credit focus</span>
             </div>
             <div class="proof-tile" style="--accent: var(--magenta)">
-              <strong>1:1</strong>
-              <span>guided action planning</span>
+              <strong>VIP</strong>
+              <span>guided action support</span>
             </div>
           </div>
         </div>
 
-        <aside class="academy-console" aria-label="Find your Credit Academy lane">
-          <div class="console-top">
-            <div>
-              <strong>Find Your Lane</strong>
-              <p>Pick the sentence that sounds most like you.</p>
+        <aside class="academy-console membership-visual" aria-label="Credit Academy membership paths">
+          <div class="portrait-stage">
+            <img src="assets/shonda-hero.png" alt="Shonda Martin" />
+            <div class="portrait-label">
+              <div>
+                <strong>Pull up clear.</strong>
+                <span>Free seat, file visibility, or full guided support.</span>
+              </div>
+              <img class="academy-mark" src="assets/credit-academy-logo-black-web.png" alt="Credit Academy" />
             </div>
-            <span class="badge">Start Here</span>
           </div>
-          <div class="lane-finder">
-            <button class="lane-option" type="button" style="--accent: var(--magenta)" data-lane="community" aria-pressed="true">
-              <i>1</i>
-              <span><strong>I need a place to start.</strong> I want free community, updates, and a feel for the education.</span>
-            </button>
-            <button class="lane-option" type="button" style="--accent: var(--green)" data-lane="tracking" aria-pressed="false">
-              <i>2</i>
-              <span><strong>I need to see my file.</strong> I want credit monitoring, alerts, and report-change visibility.</span>
-            </button>
-            <button class="lane-option" type="button" style="--accent: var(--yellow)" data-lane="learn" aria-pressed="false">
-              <i>3</i>
-              <span><strong>I need to learn the process.</strong> I want community, resources, app access, and some Q+A.</span>
-            </button>
-            <button class="lane-option" type="button" style="--accent: var(--purple)" data-lane="vip" aria-pressed="false">
-              <i>4</i>
-              <span><strong>I need guided action.</strong> I want support, workshops, and the Dispute Engine behind me.</span>
-            </button>
-          </div>
-          <div class="lane-result" id="laneResult">
-            <span id="laneEyebrow">Recommended start</span>
-            <h3 id="laneTitle">Free Community</h3>
-            <p id="laneCopy">Start with the Circle community. No card, no catch, just a way to meet the Cousins and get closer to the education.</p>
+          <div class="visual-copy">
+            <div class="console-top">
+              <div>
+                <strong>Three clean paths.</strong>
+                <p>Choose the level of support that fits where you are right now.</p>
+              </div>
+              <span class="badge">Start Here</span>
+            </div>
+            <div class="path-preview">
+              <div class="preview-row" style="--accent: var(--green)">
+                <div class="preview-number">01</div>
+                <div>
+                  <strong>Free Cousin Seat</strong>
+                  <span>Community, updates, and starter education.</span>
+                </div>
+                <div class="preview-tag">Free</div>
+              </div>
+              <div class="preview-row" style="--accent: var(--blue)">
+                <div class="preview-number">02</div>
+                <div>
+                  <strong>Credit File Visibility</strong>
+                  <span>SmartCredit reports, protection, tools, and alerts.</span>
+                </div>
+                <div class="preview-tag">Monitor</div>
+              </div>
+              <div class="preview-row" style="--accent: var(--magenta)">
+                <div class="preview-number">03</div>
+                <div>
+                  <strong>VIP Action Suite</strong>
+                  <span>Guided full-suite Credit Academy support.</span>
+                </div>
+                <div class="preview-tag">Full System</div>
+              </div>
+            </div>
           </div>
         </aside>
       </section>
@@ -1056,83 +1807,85 @@
   <section class="section light" id="memberships">
     <div class="inner">
       <div class="section-heading">
-        <h2>Choose the membership path that matches your season.</h2>
+        <h2>Pick the level of support you actually need.</h2>
           <p>
-          Pull up the free community seat, start monitoring, step into learning, or choose VIP
-          Action for guided support, webinars, Q+A, and the patented Dispute Engine.
+          Three clear options: start free, monitor your credit file, or get the guided VIP
+          Credit Academy membership.
         </p>
       </div>
 
-      <div class="tabs" role="tablist" aria-label="Membership focus filter">
-        <button class="tab" type="button" role="tab" aria-selected="true" data-focus="all">All Paths</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-focus="tracking">Tracking</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-focus="learn">Learn</button>
-        <button class="tab" type="button" role="tab" aria-selected="false" data-focus="vip">VIP Action</button>
-      </div>
-
-      <div class="community-callout">
-        <div>
-          <span class="badge">Free Circle Community</span>
-          <h3>Community</h3>
+      <div class="membership-grid simple">
+        <article class="membership-card free-tier">
+          <span class="badge">Free Tier</span>
+          <h3>Free Cousin Seat</h3>
+          <div class="price"><strong>$0</strong><span>start here</span></div>
           <p>
-            The open seat at the table for people who want to meet the Cousins, watch for updates,
-            and get close to the education before choosing a deeper path.
-          </p>
-        </div>
-        <a class="button" href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7">Tour the Community</a>
-      </div>
-
-      <div class="membership-grid">
-        <article class="membership-card" data-card="tracking">
-          <span class="badge">Powered by SmartCredit</span>
-          <h3>Tracking</h3>
-          <div class="price"><strong>$9</strong><span>/mo credit monitoring</span></div>
-          <p>
-            The monitoring layer for members who need visibility first: reports, scores, alerts,
-            and credit activity tracking powered by SmartCredit.
+            The open-door option for Cousins who want to get close to the culture, learn the
+            language, and see where they fit before choosing a paid path.
           </p>
           <ul>
-            <li>Credit monitoring through SmartCredit</li>
-            <li>3-bureau report and score visibility when available in your plan</li>
-            <li>ScoreTracker, monitoring alerts, and report-change awareness</li>
-            <li>Money Manager, Action Buttons, and identity-protection tools</li>
+            <li>Free Circle community access</li>
+            <li>Community updates and starter education</li>
+            <li>Live show and Cousin conversation access when available</li>
+            <li>Best first step if you are still deciding</li>
           </ul>
-          <a class="button" href="https://www.smartcredit.com/?PID=74780&_gl=1*1mer0ch*_gcl_au*ODExMTU4Mjg3LjE3NzY3OTU5NDI.">Start Tracking</a>
+          <a class="button" href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7">Join Free Community</a>
         </article>
 
-        <article class="membership-card" data-card="learn">
-          <span class="badge">Community Lite</span>
-          <h3>Learn</h3>
-          <div class="price"><strong>Lite</strong><span>temporary Academy access</span></div>
+        <article class="membership-card monitor-tier" data-card="tracking">
+          <span class="badge">Powered by SmartCredit</span>
+          <h3>Credit File Visibility</h3>
+          <div class="price"><strong>$9</strong><span>/mo visibility tools</span></div>
           <p>
-            Temporary access to the Credit Academy Community for members who want education,
-            updates, app access, and a lighter support experience.
+            The “show me the file” option: reports, tracking, protection, and tools for people
+            who need clarity before they make their next credit move.
           </p>
           <ul>
-            <li>Credit Academy Community access</li>
-            <li>Some access to Live Q+A sessions</li>
-            <li>Community Lite resource library</li>
-            <li>Dedicated app access, updates, and member notices</li>
+            <li>3-bureau credit report access through SmartCredit</li>
+            <li>Credit monitoring and score tracking</li>
+            <li>Identity theft protection and alerts</li>
+            <li>Credit card and money-management tools</li>
           </ul>
-          <a class="button" href="https://member.roadto750.net/Registration/CreateAccount/Account">Start Learning</a>
+          <a class="button" href="https://www.smartcredit.com/?PID=74780&_gl=1*1mer0ch*_gcl_au*ODExMTU4Mjg3LjE3NzY3OTU5NDI.">Start Monitoring</a>
         </article>
 
         <article class="membership-card featured" data-card="vip">
-          <span class="badge">VIP</span>
-          <h3>Action</h3>
+          <span class="badge">Credit Academy Membership VIP</span>
+          <h3>VIP Action Suite</h3>
           <div class="price"><strong>VIP</strong><span>guided support</span></div>
           <p>
-            Built for members who need guided support to start, continue, or strengthen their
-            credit journey with the Academy, community, and Dispute Engine working together.
+            The full guided membership for Cousins ready to move with structure: the Academy
+            teaches, the Engine organizes the heavy lifting, and you stay in the driver's seat.
           </p>
           <ul>
-            <li>Patented Dispute Engine for law, letters, follow-up, and tracking</li>
-            <li>Metro 2 compliance, attorney review, and strategic sequencing</li>
-            <li>Exclusive members-only webinars, workshops, and Q+A sessions</li>
-            <li>Guided DIY system refined through 10+ years and 200,000+ reports</li>
+            <li>Dispute Engine scans all three bureau reports, finds negative accounts, and writes letters</li>
+            <li>Letter Library with 17 fillable templates ready to send</li>
+            <li>Private Cousin Community for strategy threads, wins, and member-only conversations</li>
+            <li>Live Q+A with Shonda plus exclusive webinars and workshops</li>
+            <li>SmartCredit 3B monitoring with fresh reports every 40 days and automatic result tracking</li>
           </ul>
-          <a class="button" href="https://member.roadto750.net/Registration/CreateAccount/Account">Apply for VIP Action</a>
+          <a class="button" href="https://member.roadto750.net/Registration/CreateAccount/Account">Join VIP Membership</a>
         </article>
+      </div>
+
+      <div class="smartcredit-banner">
+        <div>
+          <span class="badge">Monitoring Add-On</span>
+          <h3>Need reports, alerts, and protection first?</h3>
+          <p>
+            SmartCredit gives you the visibility layer: 3B credit report access, score tracking,
+            credit monitoring, identity theft protection, credit card tools, and money-management
+            tools before or alongside your Academy work.
+          </p>
+          <div class="smartcredit-points" aria-label="SmartCredit tools">
+            <span>3B Credit Reports</span>
+            <span>Score Tracking</span>
+            <span>Identity Protection</span>
+            <span>Credit Card Tools</span>
+            <span>Monitoring Alerts</span>
+          </div>
+        </div>
+        <a class="button" href="https://www.smartcredit.com/?PID=74780&_gl=1*1mer0ch*_gcl_au*ODExMTU4Mjg3LjE3NzY3OTU5NDI.">Get SmartCredit</a>
       </div>
     </div>
   </section>
@@ -1140,10 +1893,10 @@
   <section class="section deep" id="how-it-works">
     <div class="inner">
       <div class="section-heading">
-        <h2>Credit Academy is not just a membership.</h2>
+        <h2>Simple on the front. Serious underneath.</h2>
         <p>
-          It is a purpose-built system: the Engine drives your disputes, the Academy builds your
-          knowledge, and the community keeps you supported.
+          Free community opens the door, SmartCredit shows you the file, and VIP brings the
+          full Academy system together.
         </p>
       </div>
 
@@ -1151,7 +1904,7 @@
         <p>
           <strong>Instead of juggling random templates,</strong> the Engine integrates everything:
           Metro 2 compliance, attorney review, strategic sequencing, and full tracking of your progress.
-          It is guided DIY, so you stay in control while a proven system supports the heavy lifting.
+          It is guided DIY, so you stay in control while the Academy supports the heavy lifting.
         </p>
         <div class="system-line">
           <span style="--accent: var(--green)">The Engine powers your disputes.</span>
@@ -1162,20 +1915,16 @@
 
       <div class="process-grid">
         <article class="process-step" style="--accent: var(--green)">
-          <h3>Track</h3>
-          <p>Use SmartCredit-powered monitoring to see reports, scores, alerts, and account activity.</p>
-        </article>
-        <article class="process-step" style="--accent: var(--yellow)">
-          <h3>Learn</h3>
-          <p>Access Community Lite resources, updates, app access, and select Live Q+A opportunities.</p>
+          <h3>Start Free</h3>
+          <p>Join the free community to get updates, starter education, and a feel for the Credit Academy ecosystem.</p>
         </article>
         <article class="process-step" style="--accent: var(--blue)">
-          <h3>Act</h3>
-          <p>VIP members use the Dispute Engine for letters, laws, sequencing, and follow-up support.</p>
+          <h3>Monitor</h3>
+          <p>Use SmartCredit for 3B reports, score tracking, monitoring alerts, identity protection, and credit tools.</p>
         </article>
         <article class="process-step" style="--accent: var(--magenta)">
-          <h3>Strengthen</h3>
-          <p>Join workshops, webinars, and Q+A sessions that help you build lasting credit confidence.</p>
+          <h3>Go VIP</h3>
+          <p>Step into guided full-suite support with the Dispute Engine, templates, community, workshops, and Q+A.</p>
         </article>
       </div>
     </div>
@@ -1187,8 +1936,8 @@
         <div>
           <h2>Built for action, not confusion.</h2>
           <p>
-            Monitoring helps you see the file. Learning helps you understand it. VIP Action gives
-            you guided support when you need the dispute process handled with more structure.
+            The page now separates the decision cleanly: free community, monitoring visibility,
+            or VIP guided support.
           </p>
         </div>
       </div>
@@ -1196,22 +1945,22 @@
         <article class="feature-item" style="--accent: var(--blue)">
           <div class="feature-icon">01</div>
           <div>
-            <h3>SmartCredit-powered visibility</h3>
-            <p>Use reports, scores, alerts, ScoreTracker, Money Manager, and Action Buttons to stay aware of changes.</p>
+            <h3>Free entry point</h3>
+            <p>Start with the Cousins, get updates, and learn the culture before choosing a paid path.</p>
           </div>
         </article>
         <article class="feature-item" style="--accent: var(--orange)">
           <div class="feature-icon">02</div>
           <div>
-            <h3>Community Lite learning</h3>
-            <p>Step into the Academy community, resource library, dedicated app, updates, and select Q+A access.</p>
+            <h3>SmartCredit-powered visibility</h3>
+            <p>Use reports, scores, monitoring alerts, identity protection, credit card tools, and money tools.</p>
           </div>
         </article>
         <article class="feature-item" style="--accent: var(--magenta)">
           <div class="feature-icon">03</div>
           <div>
-            <h3>VIP Dispute Engine</h3>
-            <p>Let the Engine handle law, letters, follow-up, strategic sequencing, and progress tracking.</p>
+            <h3>VIP guided support</h3>
+            <p>Use the full Credit Academy membership when you want the Engine, education, community, and live guidance together.</p>
           </div>
         </article>
       </div>
@@ -1264,73 +2013,135 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="inner">
-      <span>Credit Academy by Shonda Martin</span>
-      <span><a href="https://shondamartin.com">ShondaMartin.com</a> · <a href="https://member.roadto750.net/Registration/LoginAccount/Login?ReturnUrl=%2F">Member Login</a></span>
+  <nav class="mobile-sticky-cta" aria-label="Quick actions">
+    <a href="shop.html">Shop</a>
+    <a href="credit-academy-memberships.html">Join</a>
+    <a href="resources.html">Learn</a>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <img src="assets/icon-logo.png" alt="Shonda Martin" class="footer-logo" />
+          <p class="footer-tagline">Real credit education. Open door. Pull up a chair.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/RoadTo750Plus" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://www.tiktok.com/@shondamartin_" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+            <a href="https://www.youtube.com/channel/UCklV5v1v9UmPX6IhX_ln1EA" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+            <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener" aria-label="Community">CA</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Learn</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="resources/library/">Resource Library</a></li>
+            <li><a href="bootcamp.html">Free Bootcamp</a></li>
+            <li><a href="events.html">Tour</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener">Free Community</a></li>
+            <li><a href="credit-academy-memberships.html">Credit Academy VIP</a></li>
+            <li><a href="https://www.smartcredit.com/?PID=74780&_gl=1*1mer0ch*_gcl_au*ODExMTU4Mjg3LjE3NzY3OTU5NDI.">SmartCredit Monitoring</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="index.html#contact">Find me on socials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Stay Close</h4>
+          <p class="footer-mini-pitch">A weekly Cousin Sunday note. Real credit wins, what dropped this week, and the next live show.</p>
+          <a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener" class="footer-cta">Join the Cousins →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          <p><strong>Educational content only.</strong> Shonda Martin and Credit Academy provide credit education, teaching, and self-help tools. Nothing on this site is legal, financial, or tax advice, and no specific outcome is guaranteed. Consumers can review their own reports, contact consumer reporting agencies and furnishers, and use federal consumer rights for free.</p>
+        </div>
+        <div class="footer-meta-row">
+          <span>&copy; 2026 Credit Academy. All rights reserved.</span>
+          <span>Last updated May 2026</span>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
-    const laneContent = {
-      community: {
-        eyebrow: "Recommended start",
-        title: "Free Community",
-        copy: "Start with the Circle community. No card, no catch, just a way to meet the Cousins and get closer to the education."
-      },
-      tracking: {
-        eyebrow: "Best first tool",
-        title: "Tracking",
-        copy: "Choose SmartCredit-powered monitoring when your next move is seeing reports, scores, alerts, and account changes clearly."
-      },
-      learn: {
-        eyebrow: "Best learning lane",
-        title: "Learn",
-        copy: "Choose Learn when you want temporary Academy access, Community Lite resources, app access, updates, and select Q+A."
-      },
-      vip: {
-        eyebrow: "Most supported path",
-        title: "VIP Action",
-        copy: "Choose VIP Action when you need guided DIY support, the patented Dispute Engine, workshops, webinars, and member Q+A."
+    (function () {
+      const toggle = document.querySelector(".mobile-nav-toggle");
+      const drawer = document.getElementById("mobile-nav-drawer");
+      const overlay = document.getElementById("mobile-nav-overlay");
+      const closeBtn = document.querySelector(".mobile-nav-close");
+      const links = document.querySelectorAll(".mobile-nav-link");
+
+      if (!toggle || !drawer || !overlay || !closeBtn) return;
+
+      function openMenu() {
+        drawer.classList.add("open");
+        overlay.classList.add("open");
+        toggle.setAttribute("aria-expanded", "true");
+        drawer.setAttribute("aria-hidden", "false");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
       }
-    };
 
-    const laneButtons = Array.from(document.querySelectorAll(".lane-option"));
-    const laneEyebrow = document.querySelector("#laneEyebrow");
-    const laneTitle = document.querySelector("#laneTitle");
-    const laneCopy = document.querySelector("#laneCopy");
+      function closeMenu() {
+        drawer.classList.remove("open");
+        overlay.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        drawer.setAttribute("aria-hidden", "true");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
 
-    laneButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const selected = laneContent[button.dataset.lane];
-
-        laneButtons.forEach((item) => {
-          item.setAttribute("aria-pressed", String(item === button));
-        });
-
-        laneEyebrow.textContent = selected.eyebrow;
-        laneTitle.textContent = selected.title;
-        laneCopy.textContent = selected.copy;
+      toggle.addEventListener("click", openMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      overlay.addEventListener("click", closeMenu);
+      links.forEach((link) => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
       });
-    });
-
-    const tabs = Array.from(document.querySelectorAll(".tab"));
-    const cards = Array.from(document.querySelectorAll(".membership-card"));
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const focus = tab.dataset.focus;
-
-        tabs.forEach((item) => {
-          item.setAttribute("aria-selected", String(item === tab));
-        });
-
-        cards.forEach((card) => {
-          const visible = focus === "all" || card.dataset.card === focus;
-          card.style.display = visible ? "flex" : "none";
-        });
-      });
-    });
+    })();
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The page is written for people who need credit basics as well as people who are ready for a more strategic next step."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after I create my account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You enter the Credit Academy member flow where you can access the portal, connect required monitoring when prompted, and begin using the available education and tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can current members use this page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Current members can use the login button to return to the member portal without creating a new account."
+      }
+    }
+  ]
+}
   </script>
 </body>
 </html>
