@@ -130,5 +130,11 @@
   </url>
 
   <!-- Hidden Playbook (intentionally not high priority since it's gated) -->
+  <url>
+    <loc>https://shondamartin.com/repairplaybook/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
 </urlset>
