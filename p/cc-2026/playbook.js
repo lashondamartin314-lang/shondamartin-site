@@ -183,29 +183,41 @@ function renderStart() {
   view.innerHTML = `
     ${sectionHead('Start Here', 'One hub for the whole dispute process', 'Credit Cousins can begin with the checklist, follow the Dispute Path, open letter templates, track outgoing mail, decode responses, and find help without bouncing between disconnected pages.')}
     <div class="pb-grid">
-      <article class="pb-card">
+      <article class="pb-card pb-step-card pb-step-card-1">
         <div class="pb-card-kicker">Step 1</div>
         <h3>Get Oriented</h3>
         <p>Review the phases and choose the first lane: validation, identity cleanup, bureau dispute, or furnisher challenge.</p>
-        <button class="pb-btn pb-btn-plain" data-jump="path">View Dispute Path</button>
+        <button class="pb-btn pb-step-action" data-jump="path">
+          <span>View Dispute Path</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
       </article>
-      <article class="pb-card">
+      <article class="pb-card pb-step-card pb-step-card-2">
         <div class="pb-card-kicker">Step 2</div>
         <h3>Find The Letter</h3>
         <p>Not sure what comes next? Choose a Credit Cousin situation and the hub will suggest the strongest template lane.</p>
-        <button class="pb-btn pb-btn-plain" data-jump="finder">Open Letter Finder</button>
+        <button class="pb-btn pb-step-action" data-jump="finder">
+          <span>Open Letter Finder</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
       </article>
-      <article class="pb-card">
+      <article class="pb-card pb-step-card pb-step-card-3">
         <div class="pb-card-kicker">Step 3</div>
         <h3>Pick Templates</h3>
         <p>Search the growing template library and open force-copy Google Docs Credit Cousins can fill out for themselves.</p>
-        <button class="pb-btn pb-btn-plain" data-jump="templates">Open Letter Templates</button>
+        <button class="pb-btn pb-step-action" data-jump="templates">
+          <span>Open Letter Templates</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
       </article>
-      <article class="pb-card">
+      <article class="pb-card pb-step-card pb-step-card-4">
         <div class="pb-card-kicker">Step 4</div>
         <h3>Track The Trail</h3>
         <p>Log sent dates, delivery dates, certified tracking, responses, and next actions for each account or bureau item.</p>
-        <button class="pb-btn pb-btn-plain" data-jump="tracker">Open Tracker</button>
+        <button class="pb-btn pb-step-action" data-jump="tracker">
+          <span>Open Tracker</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
       </article>
     </div>
     <div class="pb-layout">
