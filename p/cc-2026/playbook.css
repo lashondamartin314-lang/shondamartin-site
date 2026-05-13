@@ -47,13 +47,23 @@
   margin-bottom: 14px;
 }
 
-.pb-hero h1 {
+.playbook-page .pb-hero h1 {
   color: #fff;
   font-family: var(--font-display);
-  font-size: clamp(46px, 7vw, 88px);
-  line-height: 0.95;
+  font-size: clamp(64px, 10vw, 132px) !important;
+  line-height: 0.95 !important;
   text-transform: uppercase;
   margin: 0 0 18px;
+}
+
+.playbook-page .pb-hero h1 span {
+  display: block;
+  width: fit-content;
+  color: transparent;
+  background: linear-gradient(110deg, var(--pink), var(--purple) 48%, var(--navy));
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: none;
 }
 
 .pb-hero p {
@@ -216,8 +226,8 @@
 
 .pb-score {
   font-family: var(--font-display);
-  font-size: 82px;
-  line-height: 0.9;
+  font-size: clamp(52px, 6vw, 76px);
+  line-height: 0.95;
   color: var(--pink);
   margin: 16px 0 10px;
 }
@@ -892,8 +902,8 @@
     padding: 38px 0 22px;
   }
 
-  .pb-hero h1 {
-    font-size: 46px;
+  .playbook-page .pb-hero h1 {
+    font-size: 64px !important;
   }
 
   .pb-hero p {
