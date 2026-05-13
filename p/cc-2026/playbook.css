@@ -81,8 +81,6 @@
 
 .pb-hero-actions a {
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
 }
 
 .pb-btn,
@@ -101,6 +99,61 @@
 
 .pb-btn {
   padding: 11px 16px;
+}
+
+.pb-hero-action {
+  --action-bg: var(--yellow);
+  --action-fg: var(--navy);
+  --action-border: var(--yellow);
+  --action-shadow: rgba(0, 0, 0, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  color: var(--action-fg);
+  background: var(--action-bg);
+  border-color: var(--action-border);
+  box-shadow: 0 12px 24px var(--action-shadow);
+}
+
+.pb-hero-action svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pb-action-playbook {
+  --action-bg: var(--yellow);
+  --action-fg: var(--navy);
+  --action-border: #ffd154;
+  --action-shadow: rgba(255, 187, 0, 0.2);
+}
+
+.pb-action-path {
+  --action-bg: var(--blue);
+  --action-fg: #fff;
+  --action-border: #52caff;
+  --action-shadow: rgba(0, 165, 226, 0.22);
+}
+
+.pb-action-finder {
+  --action-bg: var(--pink);
+  --action-fg: #fff;
+  --action-border: #ff65b7;
+  --action-shadow: rgba(241, 0, 133, 0.22);
+}
+
+.pb-action-tracker {
+  --action-bg: var(--green);
+  --action-fg: #102800;
+  --action-border: #8ae333;
+  --action-shadow: rgba(94, 200, 6, 0.18);
 }
 
 .pb-btn:hover,
