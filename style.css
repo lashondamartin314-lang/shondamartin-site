@@ -10505,6 +10505,255 @@ a.blog-post-card:hover .blog-post-arrow {
 }
 
 /* ============================================
+   v31: Join section polish
+   - normalize pricing/title structure
+   - unify non-VIP cards into one family
+   - keep VIP as sole emphasis lane
+   ============================================ */
+
+.join-frame {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.join-frame .path-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.path-card {
+  border-radius: 22px !important;
+  min-height: 100%;
+  padding: 32px 28px 26px !important;
+  box-shadow: 0 16px 40px rgba(0, 16, 111, 0.10) !important;
+}
+
+.path-standard {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%) !important;
+  border: 1px solid rgba(0, 16, 111, 0.10) !important;
+  color: var(--ink) !important;
+}
+
+.path-standard::before,
+.path-standard::after {
+  display: none !important;
+}
+
+.path-standard .path-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(0, 16, 111, 0.07) !important;
+  border: 1px solid rgba(0, 16, 111, 0.10);
+  color: var(--navy) !important;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px !important;
+  width: auto !important;
+}
+
+.path-title,
+.path-free .path-title,
+.path-monitor .path-title,
+.path-vip .path-title {
+  min-height: 2.15em;
+  margin: 0 0 10px !important;
+  font-size: clamp(29px, 3vw, 38px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: 0.005em;
+}
+
+.path-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.path-price strong {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.path-price span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.path-standard .path-price strong,
+.path-standard .path-title {
+  color: var(--ink) !important;
+}
+
+.path-standard .path-sub {
+  color: #4d5569 !important;
+  margin-bottom: 18px !important;
+}
+
+.path-standard .path-features {
+  margin: 0 0 20px !important;
+}
+
+.path-standard .path-features li {
+  color: var(--ink) !important;
+  border-bottom: 1px solid rgba(0, 16, 111, 0.08) !important;
+}
+
+.path-standard .path-features li:last-child {
+  border-bottom: none !important;
+}
+
+.path-standard .path-features li::before {
+  background: linear-gradient(135deg, var(--navy), var(--purple)) !important;
+  color: #fff !important;
+}
+
+.path-standard .path-features li strong {
+  color: var(--ink) !important;
+}
+
+.path-standard .btn-secondary {
+  margin-top: auto;
+  background: var(--navy) !important;
+  border-color: var(--navy) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.path-standard .btn-secondary:hover {
+  background: var(--purple) !important;
+  border-color: var(--purple) !important;
+  color: #fff !important;
+}
+
+.path-standard .path-note {
+  color: #5f6475 !important;
+  font-style: normal;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  font-family: var(--font-body, Inter, sans-serif);
+  font-weight: 500;
+  opacity: 1;
+}
+
+.path-free,
+.path-monitor {
+  transform: none !important;
+}
+
+.path-vip {
+  transform: translateY(-12px) !important;
+  padding-top: 52px !important;
+}
+
+.path-vip .path-price {
+  margin-bottom: 18px;
+}
+
+.path-vip .path-price strong {
+  color: #fff;
+}
+
+.path-vip .path-price span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.path-vip-recommended {
+  top: 14px !important;
+  left: 20px;
+  right: auto !important;
+}
+
+.join-frame .join-footer {
+  max-width: 760px;
+  margin-top: 28px;
+}
+
+.join-frame .join-footer p {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.join-frame .join-footer .btn {
+  min-width: 180px;
+}
+
+@media (max-width: 1080px) {
+  .join-frame .path-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .join-frame .path-grid .path-vip {
+    grid-column: 1 / -1;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 880px) {
+  .join-frame .path-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .join-frame .path-grid .path-vip {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .path-vip,
+  .path-free,
+  .path-monitor {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .path-card {
+    padding: 26px 20px 22px !important;
+    border-radius: 18px !important;
+  }
+
+  .path-title,
+  .path-free .path-title,
+  .path-monitor .path-title,
+  .path-vip .path-title {
+    min-height: 0;
+    font-size: 25px !important;
+  }
+
+  .path-price strong {
+    font-size: 28px;
+  }
+
+  .path-price span {
+    font-size: 11px;
+  }
+
+  .path-vip {
+    padding-top: 56px !important;
+  }
+
+  .path-vip-recommended {
+    left: 16px;
+    top: 12px !important;
+    font-size: 8px !important;
+  }
+}
+
+/* ============================================
    v27: HERO SIGNATURE LOGO
    - "Hey! I'm" stays as text
    - Name swapped for handwritten signature image
