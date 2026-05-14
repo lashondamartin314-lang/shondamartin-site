@@ -773,8 +773,8 @@
 
     .membership-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.12fr) minmax(0, 0.98fr);
+      gap: 22px;
     }
 
     .membership-grid.simple {
@@ -814,7 +814,7 @@
       flex-direction: column;
       border-radius: 8px;
       border: 1px solid rgba(0, 16, 111, 0.12);
-      padding: 24px;
+      padding: 28px 24px 24px;
       background: #ffffff;
       box-shadow: 0 12px 30px rgba(9, 11, 34, 0.06);
     }
@@ -836,6 +836,18 @@
       background: var(--green);
     }
 
+    .membership-card.diy-tier {
+      border-top: 5px solid var(--orange);
+      background:
+        linear-gradient(135deg, rgba(255, 92, 0, 0.12), rgba(255, 187, 0, 0.08)),
+        #ffffff;
+    }
+
+    .membership-card.diy-tier .badge {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--orange), var(--magenta));
+    }
+
     .membership-card.monitor-tier {
       border-top: 5px solid var(--blue);
       background:
@@ -843,27 +855,19 @@
         #ffffff;
     }
 
-    .membership-card:nth-child(1) {
-      border-top: 5px solid var(--green);
-    }
-
-    .membership-card:nth-child(2) {
-      border-top: 5px solid var(--yellow);
-    }
-
     .membership-card.featured {
       color: var(--ink);
-      border-color: rgba(241, 0, 133, 0.2);
-      border-top: 5px solid var(--magenta);
+      border-color: rgba(241, 0, 133, 0.28);
+      border-top: 6px solid var(--magenta);
       background:
-        linear-gradient(135deg, rgba(255, 187, 0, 0.18), rgba(241, 0, 133, 0.08)),
+        linear-gradient(135deg, rgba(255, 187, 0, 0.16), rgba(241, 0, 133, 0.14) 52%, rgba(53, 2, 99, 0.05)),
         #ffffff;
-      transform: translateY(-6px);
-      box-shadow: 0 22px 54px rgba(53, 2, 99, 0.15);
+      transform: translateY(-14px);
+      box-shadow: 0 24px 60px rgba(241, 0, 133, 0.14), 0 18px 36px rgba(53, 2, 99, 0.12);
     }
 
     .membership-card.featured::before {
-      content: "Exclusive Guided DIY";
+      content: "★ Member Favorite";
       width: fit-content;
       display: inline-flex;
       min-height: 32px;
@@ -871,8 +875,8 @@
       border-radius: 999px;
       padding: 0 12px;
       color: #ffffff;
-      background: var(--purple);
-      font-size: 0.78rem;
+      background: linear-gradient(135deg, var(--magenta), var(--purple));
+      font-size: 0.74rem;
       font-family: var(--display);
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -894,7 +898,7 @@
       display: flex;
       align-items: baseline;
       gap: 6px;
-      margin-top: 16px;
+      margin-top: 18px;
     }
 
     .price strong {
@@ -912,14 +916,14 @@
 
     .membership-card h3 {
       margin-top: 18px;
-      font-size: 2.4rem;
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
     }
 
     .membership-card p {
       min-height: 0;
       margin: 10px 0 18px;
       color: currentColor;
-      opacity: 0.76;
+      opacity: 0.78;
     }
 
     .membership-card ul {
@@ -972,6 +976,58 @@
     .membership-card.free-tier .button:focus-visible {
       color: #07121f;
       background: #72e51f;
+    }
+
+    .membership-card.diy-tier .button {
+      background: linear-gradient(135deg, var(--orange), var(--magenta));
+      box-shadow: 0 12px 28px rgba(255, 92, 0, 0.22);
+    }
+
+    .membership-card.diy-tier .button:hover,
+    .membership-card.diy-tier .button:focus-visible {
+      background: linear-gradient(135deg, #ff7317, #ff2b9f);
+    }
+
+    .guest-pass-callout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      margin-top: 28px;
+      padding: clamp(22px, 4vw, 30px);
+      border: 1px solid rgba(94, 200, 6, 0.22);
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 10% 0, rgba(94, 200, 6, 0.16), transparent 18rem),
+        radial-gradient(circle at 90% 20%, rgba(255, 187, 0, 0.10), transparent 16rem),
+        #ffffff;
+      box-shadow: 0 14px 34px rgba(9, 11, 34, 0.06);
+    }
+
+    .guest-pass-callout h3 {
+      margin: 8px 0 0;
+      font-size: clamp(2.3rem, 4vw, 3.7rem);
+    }
+
+    .guest-pass-callout p {
+      max-width: 760px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .membership-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .membership-card.featured {
+        transform: none;
+      }
+
+      .guest-pass-callout {
+        grid-template-columns: 1fr;
+      }
     }
 
     .smartcredit-banner {
@@ -1653,22 +1709,24 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Free Cousin Seat",
+        "name": "Guest Pass",
         "price": "0",
         "priceCurrency": "USD",
-        "url": "https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7"
+        "url": "https://creditacademy.circle.so/join?invitation_token=86c67faf3c2b69c9cd7bb0e478f06773532da24a-958117a2-eee0-445a-8d39-3b7e1db25830"
       },
       {
         "@type": "Offer",
-        "name": "Credit File Visibility",
-        "price": "9",
+        "name": "SmartCredit 3B Visibility",
+        "price": "24.99",
         "priceCurrency": "USD",
         "url": "https://www.smartcredit.com/?PID=74780"
       },
       {
         "@type": "Offer",
         "name": "Credit Academy Membership VIP",
-        "url": "https://member.roadto750.net/Registration/CreateAccount/Account"
+        "price": "39.99",
+        "priceCurrency": "USD",
+        "url": "https://www.smartcredit.com/?PID=84773"
       }
     ]
   }
@@ -1733,11 +1791,10 @@
           <p class="eyebrow"><i aria-hidden="true"></i> Restore. Build. Maintain. Leverage.</p>
           <h1 id="hero-title">Choose your Credit Academy <span class="accent">seat.</span></h1>
           <p class="hero-copy">
-            Start free, add 3-bureau monitoring when you need visibility, or step into VIP when
-            you want the full guided Credit Academy system behind your next move.
+            Start with the self-guided Dispute Hub, add SmartCredit when you need full 3-bureau visibility, or step into VIP when you want the full guided Credit Academy system behind your next move.
           </p>
           <div class="hero-actions">
-            <a class="button" href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7">Join Free Community</a>
+            <a class="button" href="p/cc-2026/">Get The Dispute Hub</a>
             <a class="button secondary" href="#memberships">Compare Options</a>
           </div>
           <div class="hero-proof" aria-label="Credit Academy highlights">
@@ -1762,7 +1819,7 @@
             <div class="portrait-label">
               <div>
                 <strong>Pull up clear.</strong>
-                <span>Free seat, file visibility, or full guided support.</span>
+                <span>Guest pass, file visibility, or full Academy support.</span>
               </div>
               <img class="academy-mark" src="assets/credit-academy-logo-black-web.png" alt="Credit Academy" />
             </div>
@@ -1779,26 +1836,26 @@
               <div class="preview-row" style="--accent: var(--green)">
                 <div class="preview-number">01</div>
                 <div>
-                  <strong>Free Cousin Seat</strong>
-                  <span>Community, updates, and starter education.</span>
+                  <strong>Dispute Hub DIY</strong>
+                  <span>Self-guided dispute kit with templates, directions, and light support.</span>
                 </div>
-                <div class="preview-tag">Free</div>
+                <div class="preview-tag">$37.99</div>
               </div>
               <div class="preview-row" style="--accent: var(--blue)">
                 <div class="preview-number">02</div>
                 <div>
-                  <strong>Credit File Visibility</strong>
-                  <span>SmartCredit reports, protection, tools, and alerts.</span>
+                  <strong>SmartCredit 3B Visibility</strong>
+                  <span>Reports, identity protection, tailored lending directives, and tools.</span>
                 </div>
-                <div class="preview-tag">Monitor</div>
+                <div class="preview-tag">$24.99</div>
               </div>
               <div class="preview-row" style="--accent: var(--magenta)">
                 <div class="preview-number">03</div>
                 <div>
-                  <strong>VIP Action Suite</strong>
-                  <span>Guided full-suite Credit Academy support.</span>
+                  <strong>VIP Academy Support</strong>
+                  <span>Everything in Tier 1 and Tier 2, plus dedicated guidance and more.</span>
                 </div>
-                <div class="preview-tag">Full System</div>
+                <div class="preview-tag">$39.99</div>
               </div>
             </div>
           </div>
@@ -1810,65 +1867,73 @@
   <section class="section light" id="memberships">
     <div class="inner">
       <div class="section-heading">
-        <h2>Pick the level of support you actually need.</h2>
-          <p>
-          Three clear options: start free, monitor your credit file, or get the guided VIP
-          Credit Academy membership.
+        <h2>Pick the lane that fits you.</h2>
+        <p>
+          Three clear options: start with the self-guided Dispute Hub, choose VIP for fuller support, or add SmartCredit 3-bureau visibility as your credit-monitoring lane.
         </p>
       </div>
 
       <div class="membership-grid simple">
-        <article class="membership-card free-tier">
-          <span class="badge">Free Tier</span>
-          <h3>Free Cousin Seat</h3>
-          <div class="price"><strong>$0</strong><span>start here</span></div>
+        <article class="membership-card diy-tier">
+          <span class="badge">DIY Access</span>
+          <h3>Dispute Hub</h3>
+          <div class="price"><strong>$37.99</strong><span>one-time fee</span></div>
           <p>
-            The open-door option for Cousins who want to get close to the culture, learn the
-            language, and see where they fit before choosing a paid path.
+            The non-guided DIY lane for Cousins who want the full dispute kit, clear steps, and light instructional support while handling the process themselves.
           </p>
           <ul>
-            <li>Free Circle community access</li>
-            <li>Community updates and starter education</li>
-            <li>Live show and Cousin conversation access when available</li>
-            <li>Best first step if you are still deciding</li>
+            <li>Full access to the Dispute Hub with the dispute path, tracker, response decoder, and more</li>
+            <li>Step-by-step directions, templates, and instructional support built for self-guided action</li>
+            <li>Light support experience so you can move independently with more clarity and confidence</li>
+            <li>Built for Cousins who want the tools and structure, but do not need the deeper guided VIP layer</li>
           </ul>
-          <a class="button" href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7">Join Free Community</a>
+          <a class="button" href="p/cc-2026/">Get The Dispute Hub</a>
+          <p>One-time access for the full self-guided kit with instructional support, without the hands-on VIP experience.</p>
+        </article>
+
+        <article class="membership-card featured" data-card="vip">
+          <span class="badge">Credit Academy VIP</span>
+          <h3>Join The Academy!</h3>
+          <div class="price"><strong>$39.99</strong><span>/mo · 7-day free trial</span></div>
+          <p>
+            Everything in Tier 1 and Tier 2, plus the premium Academy experience for Cousins who want dedicated guidance, more support, stronger systems, and less heavy lifting on their own.
+          </p>
+          <ul>
+            <li>Everything in Tier 1 and Tier 2, plus more resources, tools, insights, education, and courses</li>
+            <li>Patent Pending Dispute Engine to help organize your next steps with more ease and intention</li>
+            <li>Member-Exclusive Resource Library with templates, letters, tools, education, and more</li>
+            <li>Member-exclusive webinars, workshops, and cohorts covering credit, homeownership, finances, business, and more</li>
+            <li>SmartCredit 3B report and full suite of credit-building tools built to complement Credit Academy</li>
+          </ul>
+          <a class="button" href="https://www.smartcredit.com/?PID=84773">Join The Academy!</a>
+          <p>Includes a 7-day free trial. Full price is charged on day 8, with everything in Tier 1 and Tier 2 already built in.</p>
         </article>
 
         <article class="membership-card monitor-tier" data-card="tracking">
           <span class="badge">Powered by SmartCredit</span>
-          <h3>Credit File Visibility</h3>
-          <div class="price"><strong>$9</strong><span>/mo visibility tools</span></div>
+          <h3>SmartCredit 3B Visibility</h3>
+          <div class="price"><strong>$24.99</strong><span>/mo monitoring + profile tools</span></div>
           <p>
-            The “show me the file” option: reports, tracking, protection, and tools for people
-            who need clarity before they make their next credit move.
+            For Cousins who need full credit monitoring, a complete 3-bureau report spread, and help building a stronger credit profile before stepping into VIP. Upgrade your account anytime when you are ready for more support.
           </p>
           <ul>
-            <li>3-bureau credit report access through SmartCredit</li>
-            <li>Credit monitoring and score tracking</li>
-            <li>Identity theft protection and alerts</li>
-            <li>Credit card and money-management tools</li>
+            <li>Full 3-bureau SmartCredit report access with score tracking and monitoring alerts</li>
+            <li>$1M identity protection plus alerts built to help you stay ahead</li>
+            <li>Personalized credit card pay date options and tailored lending directives</li>
+            <li>SmartCredit's full suite of credit-building tools designed to complement Credit Academy</li>
           </ul>
-          <a class="button" href="https://www.smartcredit.com/?PID=74780&_gl=1*1mer0ch*_gcl_au*ODExMTU4Mjg3LjE3NzY3OTU5NDI.">Start Monitoring</a>
+          <a class="button" href="https://www.smartcredit.com/?PID=74780">Start SmartCredit 3B</a>
+          <p>When you are ready for more support, you can upgrade your account anytime to the VIP Academy option.</p>
         </article>
+      </div>
 
-        <article class="membership-card featured" data-card="vip">
-          <span class="badge">Credit Academy Membership VIP</span>
-          <h3>VIP Action Suite</h3>
-          <div class="price"><strong>VIP</strong><span>guided support</span></div>
-          <p>
-            The full guided membership for Cousins ready to move with structure: the Academy
-            teaches, the Engine organizes the heavy lifting, and you stay in the driver's seat.
-          </p>
-          <ul>
-            <li>Dispute Engine scans all three bureau reports, finds negative accounts, and writes letters</li>
-            <li>Letter Library with 17 fillable templates ready to send</li>
-            <li>Private Cousin Community for strategy threads, wins, and member-only conversations</li>
-            <li>Live Q+A with Shonda plus exclusive webinars and workshops</li>
-            <li>SmartCredit 3B monitoring with fresh reports every 40 days and automatic result tracking</li>
-          </ul>
-          <a class="button" href="https://member.roadto750.net/Registration/CreateAccount/Account">Join VIP Membership</a>
-        </article>
+      <div class="guest-pass-callout">
+        <div>
+          <span class="badge">Still undecided?</span>
+          <h3>Be My Guest.</h3>
+          <p>Come tour the community, get a feel for the neighborhood, and explore the resources before you decide. Join us as my personal guest for 7 full days.</p>
+        </div>
+        <a class="button secondary" href="https://creditacademy.circle.so/join?invitation_token=86c67faf3c2b69c9cd7bb0e478f06773532da24a-958117a2-eee0-445a-8d39-3b7e1db25830">Start Guest Pass</a>
       </div>
 
       <div class="smartcredit-banner">
@@ -1876,19 +1941,18 @@
           <span class="badge">Monitoring Add-On</span>
           <h3>Need reports, alerts, and protection first?</h3>
           <p>
-            SmartCredit gives you the visibility layer: 3B credit report access, score tracking,
-            credit monitoring, identity theft protection, credit card tools, and money-management
-            tools before or alongside your Academy work.
+            SmartCredit gives you the visibility layer: 3-bureau reports, score tracking, monitoring alerts, $1M identity protection, personalized pay date options, tailored lending directives, and a full suite of credit-building tools before or alongside your Academy work. Upgrade anytime when you are ready for the full Academy experience.
           </p>
           <div class="smartcredit-points" aria-label="SmartCredit tools">
             <span>3B Credit Reports</span>
             <span>Score Tracking</span>
-            <span>Identity Protection</span>
-            <span>Credit Card Tools</span>
+            <span>$1M Identity Protection</span>
+            <span>Pay Date Options</span>
+            <span>Tailored Lending Directives</span>
             <span>Monitoring Alerts</span>
           </div>
         </div>
-        <a class="button" href="https://www.smartcredit.com/?PID=74780&_gl=1*1mer0ch*_gcl_au*ODExMTU4Mjg3LjE3NzY3OTU5NDI.">Get SmartCredit</a>
+        <a class="button" href="https://www.smartcredit.com/?PID=74780">Get SmartCredit</a>
       </div>
     </div>
   </section>
@@ -1898,8 +1962,7 @@
       <div class="section-heading">
         <h2>Simple on the front. Serious underneath.</h2>
         <p>
-          Free community opens the door, SmartCredit shows you the file, and VIP brings the
-          full Academy system together.
+          Dispute Hub gives you the self-guided kit, SmartCredit shows you the file, and VIP brings the full Academy system together.
         </p>
       </div>
 
@@ -1918,16 +1981,16 @@
 
       <div class="process-grid">
         <article class="process-step" style="--accent: var(--green)">
-          <h3>Start Free</h3>
-          <p>Join the free community to get updates, starter education, and a feel for the Credit Academy ecosystem.</p>
+          <h3>Start DIY</h3>
+          <p>Use the Dispute Hub for the kit, templates, tracker, and instructional support while staying fully self-guided.</p>
         </article>
         <article class="process-step" style="--accent: var(--blue)">
-          <h3>Monitor</h3>
-          <p>Use SmartCredit for 3B reports, score tracking, monitoring alerts, identity protection, and credit tools.</p>
+          <h3>Build Visibility</h3>
+          <p>Use SmartCredit for 3B reports, score tracking, monitoring alerts, identity protection, and credit-building tools.</p>
         </article>
         <article class="process-step" style="--accent: var(--magenta)">
           <h3>Go VIP</h3>
-          <p>Step into guided full-suite support with the Dispute Engine, templates, community, workshops, and Q+A.</p>
+          <p>Step into everything in Tier 1 and Tier 2, plus the Patent Pending Dispute Engine, member-exclusive resources, webinars, workshops, cohorts, and more support.</p>
         </article>
       </div>
     </div>
@@ -1939,8 +2002,8 @@
         <div>
           <h2>Built for action, not confusion.</h2>
           <p>
-            The page now separates the decision cleanly: free community, monitoring visibility,
-            or VIP guided support.
+            The page now separates the decision cleanly: self-guided DIY, monitoring visibility,
+            or full Academy VIP support.
           </p>
         </div>
       </div>
@@ -1948,22 +2011,22 @@
         <article class="feature-item" style="--accent: var(--blue)">
           <div class="feature-icon">01</div>
           <div>
-            <h3>Free entry point</h3>
-            <p>Start with the Cousins, get updates, and learn the culture before choosing a paid path.</p>
+            <h3>DIY self-guided lane</h3>
+            <p>Use the full dispute kit, templates, and instructional support while handling the process yourself.</p>
           </div>
         </article>
         <article class="feature-item" style="--accent: var(--orange)">
           <div class="feature-icon">02</div>
           <div>
             <h3>SmartCredit-powered visibility</h3>
-            <p>Use reports, scores, monitoring alerts, identity protection, credit card tools, and money tools.</p>
+            <p>Use reports, scores, monitoring alerts, identity protection, pay date tools, and lending guidance.</p>
           </div>
         </article>
         <article class="feature-item" style="--accent: var(--magenta)">
           <div class="feature-icon">03</div>
           <div>
-            <h3>VIP guided support</h3>
-            <p>Use the full Credit Academy membership when you want the Engine, education, community, and live guidance together.</p>
+            <h3>VIP Academy support</h3>
+            <p>Use the full Credit Academy membership when you want the Engine, exclusive resources, education, community, dedicated guidance, and more support together.</p>
           </div>
         </article>
       </div>
@@ -1976,13 +2039,12 @@
         <div>
           <h2>Ready to join Credit Academy?</h2>
           <p>
-            Create your account to enter the Road to 750 member experience, or log in if you already
-            have access.
+            Start with the Dispute Hub, choose SmartCredit if you need visibility, or join the Academy with a 7-day free trial before billing begins on day 8.
           </p>
         </div>
         <div class="join-actions">
-          <a class="button" href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7">Join Free Community</a>
-          <a class="button" href="https://member.roadto750.net/Registration/CreateAccount/Account">Sign Up / Join</a>
+          <a class="button" href="p/cc-2026/">Get The Dispute Hub</a>
+          <a class="button" href="https://www.smartcredit.com/?PID=84773">Join The Academy!</a>
           <a class="button secondary" href="https://member.roadto750.net/Registration/LoginAccount/Login?ReturnUrl=%2F">Member Login</a>
         </div>
       </div>
@@ -2050,9 +2112,9 @@
         <div class="footer-col">
           <h4 class="footer-col-title">Connect</h4>
           <ul class="footer-links">
-            <li><a href="https://creditacademy.circle.so/join?invitation_token=9f6aa6f2701e422dc8b169b21e44f729a73c9bbb-33dc8b3d-685b-468c-a730-9de6015b06b7" target="_blank" rel="noopener">Free Community</a></li>
+            <li><a href="https://creditacademy.circle.so/join?invitation_token=86c67faf3c2b69c9cd7bb0e478f06773532da24a-958117a2-eee0-445a-8d39-3b7e1db25830" target="_blank" rel="noopener">Guest Pass</a></li>
             <li><a href="credit-academy-memberships.html">Credit Academy VIP</a></li>
-            <li><a href="https://www.smartcredit.com/?PID=74780&_gl=1*1mer0ch*_gcl_au*ODExMTU4Mjg3LjE3NzY3OTU5NDI.">SmartCredit Monitoring</a></li>
+            <li><a href="https://www.smartcredit.com/?PID=74780">SmartCredit Monitoring</a></li>
             <li><a href="shop.html">Shop</a></li>
             <li><a href="index.html#contact">Find me on socials</a></li>
           </ul>

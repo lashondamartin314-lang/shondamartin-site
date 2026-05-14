@@ -2,7 +2,7 @@
 "$schema_note": "Edit this file to change the sidebar buttons. Valid icons: report, shield, tools, download, book, link. CRITICAL: every button block ends with }, EXCEPT the last one which ends with just }",
 "buttons": [
 {
-    "label": "Open Dispute Hub",
+    "label": "Go to Dispute Hub Workspace",
 "url": "/p/cc-2026/",
 "icon": "book"
 },

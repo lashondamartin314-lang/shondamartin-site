@@ -60,7 +60,7 @@
   display: block;
   width: fit-content;
   color: transparent;
-  background: linear-gradient(110deg, var(--pink), var(--purple) 48%, var(--navy));
+  background: linear-gradient(110deg, var(--orange), var(--pink) 58%);
   -webkit-background-clip: text;
   background-clip: text;
   text-shadow: none;
@@ -225,7 +225,8 @@
 }
 
 .pb-score {
-  font-family: var(--font-display);
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
   font-size: clamp(52px, 6vw, 76px);
   line-height: 0.95;
   color: var(--pink);
@@ -233,9 +234,11 @@
 }
 
 .pb-score-sub {
-  color: var(--ink-muted);
-  line-height: 1.55;
-  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+  font-size: 15px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
 }
 
 .pb-feature-label {
@@ -345,8 +348,11 @@
 .pb-section-head p {
   margin: 10px 0 0;
   max-width: 760px;
-  color: var(--ink-muted);
+  color: var(--ink);
   line-height: 1.65;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 500;
 }
 
 .pb-kicker {
@@ -359,6 +365,27 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
+}
+
+.pb-start-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.72fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.pb-start-main {
+  display: grid;
+  gap: 16px;
+}
+
+.pb-start-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pb-start-side {
+  position: sticky;
+  top: 142px;
 }
 
 .pb-grid.two {
@@ -409,6 +436,14 @@
   line-height: 1.1;
   margin: 0 0 10px;
   color: var(--ink);
+}
+
+.pb-checklist-panel {
+  border: 2px dashed color-mix(in srgb, var(--purple) 42%, #ffffff);
+}
+
+.pb-checklist-panel h3 {
+  color: var(--purple);
 }
 
 .pb-card p,
@@ -934,6 +969,7 @@
 
 @media (max-width: 900px) {
   .pb-hero-grid,
+  .pb-start-shell,
   .pb-layout,
   .pb-section-head,
   .pb-finder-layout,
@@ -942,7 +978,8 @@
   }
 
   .pb-grid,
-  .pb-grid.two {
+  .pb-grid.two,
+  .pb-start-grid {
     grid-template-columns: 1fr;
   }
 
@@ -955,6 +992,10 @@
   }
 
   .pb-finder-result {
+    position: static;
+  }
+
+  .pb-start-side {
     position: static;
   }
 }

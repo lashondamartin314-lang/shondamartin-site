@@ -46,7 +46,10 @@
   .sidebar-title { font-family: var(--font-display); font-size: 28px; font-weight: 400; line-height: 1.0; letter-spacing: 0.01em; color: var(--ink); text-transform: uppercase; }
   .sidebar-subtitle { font-size: 11px; color: var(--stone); margin-top: 6px; letter-spacing: 0.02em; }
   .sidebar-section-label { font-family: var(--font-mono); font-size: 9px; font-weight: 700; color: var(--stone-medium); text-transform: uppercase; letter-spacing: .16em; padding: 0 6px 10px; }
-  .sidebar-nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .sidebar-section-block { margin-bottom: 18px; }
+  .sidebar-nav { display: flex; flex-direction: column; gap: 6px; }
+  .sidebar-nav.sidebar-resources { flex: 0 0 auto; }
+  .sidebar-nav.sidebar-sections { flex: 1; min-height: 0; overflow-y: auto; padding-right: 2px; }
   .sidebar-btn { display: flex; align-items: center; gap: 12px; padding: 11px 12px; background: var(--paper); border: 1px solid var(--hairline); border-radius: 6px; color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 500; line-height: 1.25; transition: all 0.15s ease; }
   .sidebar-btn:hover { background: var(--magenta-tint); border-color: var(--magenta); color: var(--magenta-muted); transform: translateX(2px); }
   .sidebar-btn:focus-visible { outline: 2px solid var(--magenta); outline-offset: 2px; }
@@ -55,6 +58,12 @@
   .sidebar-btn-label { flex: 1; }
   .sidebar-btn-arrow { flex-shrink: 0; opacity: 0.4; transition: opacity 0.15s, transform 0.15s; }
   .sidebar-btn:hover .sidebar-btn-arrow { opacity: 1; transform: translateX(2px); }
+  .sidebar-btn.sidebar-btn-resource { background: linear-gradient(135deg, rgba(0,16,111,0.06), rgba(0,165,226,0.08)); border-color: rgba(0,16,111,0.14); }
+  .sidebar-btn.sidebar-btn-resource .sidebar-btn-icon { color: var(--navy); }
+  .sidebar-btn.sidebar-btn-resource:hover { background: linear-gradient(135deg, rgba(0,16,111,0.12), rgba(0,165,226,0.14)); border-color: var(--blue); color: var(--navy); }
+  .sidebar-btn.sidebar-btn-section { padding: 10px 12px; font-size: 12px; background: rgba(255,255,255,0.85); }
+  .sidebar-btn.sidebar-btn-section .sidebar-btn-icon { color: var(--navy); }
+  .sidebar-btn.sidebar-btn-section.active { background: var(--magenta-tint); border-color: var(--magenta); color: var(--magenta-muted); }
   .sidebar-footer { margin-top: 22px; padding: 16px 6px 0; border-top: 1px solid var(--hairline-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
   .sidebar-footer a { color: var(--stone); text-decoration: none; }
   .sidebar-footer a:hover { color: var(--magenta); }
@@ -63,9 +72,33 @@
   .menu-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   .backdrop { display: none; position: fixed; inset: 0; background: rgba(10, 14, 46, 0.4); z-index: 15; opacity: 0; transition: opacity 0.25s ease; }
   .kit-frame { position: fixed; top: 0; left: var(--sidebar-width); right: 0; bottom: 0; background: var(--paper); }
-.kit-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.kit-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: var(--paper); }
+  .toc-fab { display: none; position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 35; border: 0; border-radius: 999px; background: linear-gradient(135deg, var(--magenta), var(--purple)); color: var(--paper); min-height: 46px; padding: 0 18px; box-shadow: 0 12px 26px rgba(53, 2, 99, 0.28); font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; align-items: center; gap: 10px; }
+  .toc-fab svg { width: 16px; height: 16px; }
+  .resources-fab { display: none; position: fixed; right: 14px; bottom: 16px; z-index: 35; border: 0; border-radius: 999px; background: linear-gradient(135deg, var(--navy), var(--blue)); color: var(--paper); min-height: 46px; padding: 0 16px; box-shadow: 0 12px 26px rgba(0, 16, 111, 0.24); font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; display: none; align-items: center; gap: 9px; }
+  .resources-fab svg { width: 16px; height: 16px; }
+  .toc-sheet { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 36; background: var(--paper); border: 1px solid var(--hairline); border-radius: 16px; box-shadow: 0 24px 48px rgba(10, 14, 46, 0.22); padding: 18px 14px 14px; transform: translateY(calc(100% + 24px)); transition: transform 0.28s cubic-bezier(.2,.7,.2,1); }
+  .toc-sheet.open { transform: translateY(0); }
+  .toc-sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 4px 10px; }
+  .toc-sheet-title { font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--magenta-muted); text-transform: uppercase; letter-spacing: .16em; }
+  .toc-sheet-close { border: 0; background: transparent; color: var(--stone); font-size: 24px; line-height: 1; cursor: pointer; padding: 2px 6px; }
+  .toc-sheet-list { display: grid; grid-template-columns: 1fr; gap: 8px; max-height: min(56vh, 460px); overflow-y: auto; padding: 2px 2px 0; }
+  .toc-chip { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border: 1px solid var(--hairline); border-radius: 10px; background: var(--paper); color: var(--ink); text-decoration: none; font-size: 12px; font-weight: 600; }
+  .toc-chip span:last-child { color: var(--magenta); font-family: var(--font-mono); font-size: 11px; }
+  .toc-chip:hover, .toc-chip:focus-visible { background: var(--magenta-tint); border-color: var(--magenta); outline: none; }
+  .resources-sheet { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 36; background: var(--paper); border: 1px solid rgba(0,16,111,0.14); border-radius: 16px; box-shadow: 0 24px 48px rgba(10, 14, 46, 0.22); padding: 18px 14px 14px; transform: translateY(calc(100% + 24px)); transition: transform 0.28s cubic-bezier(.2,.7,.2,1); }
+  .resources-sheet.open { transform: translateY(0); }
+  .resources-sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 4px 10px; }
+  .resources-sheet-title { font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .16em; }
+  .resources-sheet-close { border: 0; background: transparent; color: var(--stone); font-size: 24px; line-height: 1; cursor: pointer; padding: 2px 6px; }
+  .resources-sheet-list { display: grid; grid-template-columns: 1fr; gap: 8px; max-height: min(56vh, 420px); overflow-y: auto; padding: 2px 2px 0; }
+  .resource-chip { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border: 1px solid rgba(0,16,111,0.12); border-radius: 10px; background: linear-gradient(135deg, rgba(0,16,111,0.05), rgba(0,165,226,0.08)); color: var(--ink); text-decoration: none; font-size: 12px; font-weight: 600; }
+  .resource-chip span:last-child { color: var(--navy); font-family: var(--font-mono); font-size: 11px; }
+  .resource-chip:hover, .resource-chip:focus-visible { background: linear-gradient(135deg, rgba(0,16,111,0.10), rgba(0,165,226,0.14)); border-color: var(--blue); outline: none; }
   @media (max-width: 1099px) {
     .menu-toggle { display: flex; }
+    .toc-fab { display: inline-flex; }
+    .resources-fab { display: inline-flex; }
     .sidebar { transform: translateX(-100%); box-shadow: 4px 0 20px rgba(0, 0, 0, 0.12); width: min(86vw, 320px); padding-top: 76px; }
     body.sidebar-open .sidebar { transform: translateX(0); }
     body.sidebar-open .backdrop { display: block; opacity: 1; }
@@ -83,23 +116,51 @@
   <div class="sidebar-header">
     <div class="sidebar-eyebrow">Credit Academy</div>
     <div class="sidebar-title">Dispute<br>Playbook</div>
-    <div class="sidebar-subtitle">Tools &amp; resources</div>
+    <div class="sidebar-subtitle">Playbook kit</div>
   </div>
-  <div class="sidebar-section-label">Resources</div>
-  <nav class="sidebar-nav" id="sidebar-nav" aria-label="External resources">
+  <div class="sidebar-section-block">
+    <div class="sidebar-section-label">Open your workspace</div>
+    <nav class="sidebar-nav sidebar-resources" id="sidebar-nav" aria-label="External resources">
     <noscript>
       <a class="sidebar-btn" href="https://www.annualcreditreport.com" target="_blank" rel="noopener"><span class="sidebar-btn-label">Pull Your Credit Reports</span></a>
       <a class="sidebar-btn" href="https://www.identitytheft.gov" target="_blank" rel="noopener"><span class="sidebar-btn-label">Identity Theft Recovery</span></a>
       <a class="sidebar-btn" href="https://www.smartcredit.com" target="_blank" rel="noopener"><span class="sidebar-btn-label">SmartCredit Tools</span></a>
       <a class="sidebar-btn" href="./The%20Repair%20Playbook%20%C2%B7%20Credit%20Academy%20%C2%B7%20Shonda%20Martin.pdf" target="_blank" rel="noopener"><span class="sidebar-btn-label">Download Printable PDF</span></a>
     </noscript>
-  </nav>
+    </nav>
+  </div>
+  <div class="sidebar-section-block">
+    <div class="sidebar-section-label">Table of contents</div>
+    <nav class="sidebar-nav sidebar-sections" id="sidebar-sections" aria-label="Playbook sections"></nav>
+  </div>
   <div class="sidebar-footer"><a href="/">shondamartin.com</a></div>
 </aside>
 <div class="backdrop" id="backdrop" aria-hidden="true"></div>
 <main class="kit-frame" role="main">
   <iframe id="main-content" src="./kit.html?v=20260513a" title="The Dispute Playbook - full document" loading="eager"></iframe>
 </main>
+<button class="toc-fab" id="toc-fab" aria-label="Open playbook sections" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="21" y2="6"></line><line x1="6" y1="12" x2="21" y2="12"></line><line x1="6" y1="18" x2="21" y2="18"></line><circle cx="3" cy="6" r="1"></circle><circle cx="3" cy="12" r="1"></circle><circle cx="3" cy="18" r="1"></circle></svg>
+  <span>Sections</span>
+</button>
+<div class="toc-sheet" id="toc-sheet" aria-hidden="true">
+  <div class="toc-sheet-head">
+    <div class="toc-sheet-title">Table of contents</div>
+    <button class="toc-sheet-close" id="toc-sheet-close" aria-label="Close sections">×</button>
+  </div>
+  <div class="toc-sheet-list" id="toc-sheet-list"></div>
+</div>
+<button class="resources-fab" id="resources-fab" aria-label="Open playbook resources" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"></path><path d="M8 7h8"></path><path d="M8 11h6"></path></svg>
+  <span>Resources</span>
+</button>
+<div class="resources-sheet" id="resources-sheet" aria-hidden="true">
+  <div class="resources-sheet-head">
+    <div class="resources-sheet-title">Playbook resources</div>
+    <button class="resources-sheet-close" id="resources-sheet-close" aria-label="Close resources">×</button>
+  </div>
+  <div class="resources-sheet-list" id="resources-sheet-list"></div>
+</div>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -133,12 +194,138 @@
 <script>
 (function(){'use strict';
 const ICONS=['report','shield','tools','download','book','link'];
+const SECTIONS=[
+  {id:'cover', label:'Cover', short:'Start'},
+  {id:'welcome', label:'Welcome', short:'Intro'},
+  {id:'how-to-use', label:'How To Use This Kit', short:'How'},
+  {id:'contents', label:'Contents', short:'TOC'},
+  {id:'phases-rounds', label:'Phases and Rounds', short:'Map'},
+  {id:'phase-map', label:'Dispute Path Map', short:'Path'},
+  {id:'5-round-strategy', label:'5-Round Strategy', short:'Rounds'},
+  {id:'account-router', label:'Account Router', short:'Router'},
+  {id:'phase-1-prepare', label:'Phase 1 · Prepare', short:'P1'},
+  {id:'phase-2-validate', label:'Phase 2 · Validate', short:'P2'},
+  {id:'phase-3-clean-identity', label:'Phase 3 · Clean Identity', short:'P3'},
+  {id:'phase-4-dispute-bureaus', label:'Phase 4 · Dispute Bureaus', short:'P4'},
+  {id:'phase-5-challenge-furnishers', label:'Phase 5 · Challenge Furnishers', short:'P5'},
+  {id:'phase-6-escalate', label:'Phase 6 · Escalate', short:'P6'},
+  {id:'round-tracker', label:'Round Tracker', short:'Track'}
+];
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function isSafeUrl(u){if(typeof u!=='string')return false;const t=u.trim();return /^(https?:|mailto:|tel:|\.?\/|[a-z0-9_-]+\.[a-z]{2,})/i.test(t)&&!/^javascript:/i.test(t)&&!/^data:/i.test(t);}
-function renderButtons(buttons){const nav=document.getElementById('sidebar-nav');if(!nav)return;nav.innerHTML=buttons.map(b=>{if(!b||!b.label||!isSafeUrl(b.url))return '';const icon=ICONS.includes(b.icon)?b.icon:'link';return `<a class="sidebar-btn" href="${escapeHtml(b.url)}" target="_blank" rel="noopener"><span class="sidebar-btn-icon"><svg><use href="#icon-${icon}"></use></svg></span><span class="sidebar-btn-label">${escapeHtml(b.label)}</span><span class="sidebar-btn-arrow"><svg width="14" height="14"><use href="#icon-arrow"></use></svg></span></a>`;}).join('');}
+function renderButtons(buttons){
+  const nav=document.getElementById('sidebar-nav');
+  const sheet=document.getElementById('resources-sheet-list');
+  const items=(buttons||[]).map(b=>{
+    if(!b||!b.label||!isSafeUrl(b.url)) return '';
+    const icon=ICONS.includes(b.icon)?b.icon:'link';
+    return `<a class="sidebar-btn sidebar-btn-resource" href="${escapeHtml(b.url)}" target="_blank" rel="noopener"><span class="sidebar-btn-icon"><svg><use href="#icon-${icon}"></use></svg></span><span class="sidebar-btn-label">${escapeHtml(b.label)}</span><span class="sidebar-btn-arrow"><svg width="14" height="14"><use href="#icon-arrow"></use></svg></span></a>`;
+  }).join('');
+  if(nav) nav.innerHTML=items;
+  if(sheet){
+    sheet.innerHTML=(buttons||[]).map(b=>{
+      if(!b||!b.label||!isSafeUrl(b.url)) return '';
+      return `<a class="resource-chip" href="${escapeHtml(b.url)}" target="_blank" rel="noopener"><span>${escapeHtml(b.label)}</span><span>Open</span></a>`;
+    }).join('');
+    sheet.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>closeResourcesSheet()));
+  }
+}
 function loadResources(){fetch('./resources.json',{cache:'no-cache'}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{if(d&&Array.isArray(d.buttons))renderButtons(d.buttons);}).catch(()=>{});}
+function getKitFrame(){return document.getElementById('main-content');}
+function buildKitUrl(id){const suffix=id?`#${encodeURIComponent(id)}`:'';return `./kit.html?v=20260513a${suffix}`;}
+function navigateToSection(id){
+  const frame=getKitFrame();
+  if(!frame)return;
+  try{
+    if(frame.contentWindow&&frame.contentWindow.location){
+      frame.contentWindow.location.hash=id;
+      frame.contentWindow.focus();
+    }else{
+      frame.src=buildKitUrl(id);
+    }
+  }catch(error){
+    frame.src=buildKitUrl(id);
+  }
+  setActiveSection(id);
+  closeTocSheet();
+}
+function setActiveSection(id){
+  document.querySelectorAll('[data-section-link]').forEach(link=>{
+    link.classList.toggle('active', link.dataset.sectionLink===id);
+  });
+}
+function renderSections(){
+  const sidebar=document.getElementById('sidebar-sections');
+  const sheet=document.getElementById('toc-sheet-list');
+  if(sidebar){
+    sidebar.innerHTML=SECTIONS.map(section=>`<a class="sidebar-btn sidebar-btn-section" href="#${escapeHtml(section.id)}" data-section-link="${escapeHtml(section.id)}"><span class="sidebar-btn-icon"><svg><use href="#icon-book"></use></svg></span><span class="sidebar-btn-label">${escapeHtml(section.label)}</span><span class="sidebar-btn-arrow"><svg width="14" height="14"><use href="#icon-arrow"></use></svg></span></a>`).join('');
+  }
+  if(sheet){
+    sheet.innerHTML=SECTIONS.map(section=>`<a class="toc-chip" href="#${escapeHtml(section.id)}" data-section-link="${escapeHtml(section.id)}"><span>${escapeHtml(section.label)}</span><span>${escapeHtml(section.short)}</span></a>`).join('');
+  }
+  document.querySelectorAll('[data-section-link]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      event.preventDefault();
+      navigateToSection(link.dataset.sectionLink);
+      if(window.matchMedia('(max-width: 1099px)').matches){
+        document.body.classList.remove('sidebar-open');
+        const toggle=document.getElementById('menu-toggle');
+        if(toggle) toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+}
+function openTocSheet(){
+  const sheet=document.getElementById('toc-sheet');
+  const fab=document.getElementById('toc-fab');
+  if(!sheet||!fab) return;
+  closeResourcesSheet();
+  sheet.classList.add('open');
+  sheet.setAttribute('aria-hidden','false');
+  fab.setAttribute('aria-expanded','true');
+}
+function closeTocSheet(){
+  const sheet=document.getElementById('toc-sheet');
+  const fab=document.getElementById('toc-fab');
+  if(!sheet||!fab) return;
+  sheet.classList.remove('open');
+  sheet.setAttribute('aria-hidden','true');
+  fab.setAttribute('aria-expanded','false');
+}
+function openResourcesSheet(){
+  const sheet=document.getElementById('resources-sheet');
+  const fab=document.getElementById('resources-fab');
+  if(!sheet||!fab) return;
+  closeTocSheet();
+  sheet.classList.add('open');
+  sheet.setAttribute('aria-hidden','false');
+  fab.setAttribute('aria-expanded','true');
+}
+function closeResourcesSheet(){
+  const sheet=document.getElementById('resources-sheet');
+  const fab=document.getElementById('resources-fab');
+  if(!sheet||!fab) return;
+  sheet.classList.remove('open');
+  sheet.setAttribute('aria-hidden','true');
+  fab.setAttribute('aria-expanded','false');
+}
+function setupTocSheet(){
+  const fab=document.getElementById('toc-fab');
+  const close=document.getElementById('toc-sheet-close');
+  if(fab) fab.addEventListener('click',()=>{const open=document.getElementById('toc-sheet')?.classList.contains('open'); open?closeTocSheet():openTocSheet();});
+  if(close) close.addEventListener('click',closeTocSheet);
+}
+function setupResourcesSheet(){
+  const fab=document.getElementById('resources-fab');
+  const close=document.getElementById('resources-sheet-close');
+  if(fab) fab.addEventListener('click',()=>{const open=document.getElementById('resources-sheet')?.classList.contains('open'); open?closeResourcesSheet():openResourcesSheet();});
+  if(close) close.addEventListener('click',closeResourcesSheet);
+}
+function setupGlobalDismiss(){
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeTocSheet();closeResourcesSheet();}});
+}
 function setupMobileToggle(){const toggle=document.getElementById('menu-toggle');const backdrop=document.getElementById('backdrop');if(!toggle||!backdrop)return;const close=()=>{document.body.classList.remove('sidebar-open');toggle.setAttribute('aria-expanded','false');};const open=()=>{document.body.classList.add('sidebar-open');toggle.setAttribute('aria-expanded','true');};toggle.addEventListener('click',()=>{document.body.classList.contains('sidebar-open')?close():open();});backdrop.addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});document.getElementById('sidebar').addEventListener('click',e=>{if(e.target.closest('a.sidebar-btn')&&window.matchMedia('(max-width: 1099px)').matches)close();});}
-if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>{loadResources();setupMobileToggle();});}else{loadResources();setupMobileToggle();}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>{loadResources();renderSections();setupMobileToggle();setupTocSheet();setupResourcesSheet();setupGlobalDismiss();setActiveSection('cover');});}else{loadResources();renderSections();setupMobileToggle();setupTocSheet();setupResourcesSheet();setupGlobalDismiss();setActiveSection('cover');}
 })();
 </script>
 </body>
